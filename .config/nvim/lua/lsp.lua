@@ -113,14 +113,14 @@ require('lspconfig').sumneko_lua.setup {
 -- map <f9> :!g++ -Wall -O2 % -o %<<cr>
 -- map <f8> :!\time -f "M: \%M T: \%U" ./%<<cr>
 vim.keymap.set('n', '<f9>', function()
-  local exename = vim.fn.expand("%:p:r")
+  local exename = vim.fn.expand("%:p:r")..".exe"
   local filename = vim.fn.expand("%:p")
   vim.cmd [[w]]
   vim.cmd("TermExec cmd=\"g++ -std=c++17 -lm -Wall -O3 -march=native  -fopenmp -lpthread " .. filename .. " -o " .. exename .. "\"")
 end, { silent = true })
 
 vim.keymap.set('n', '<f8>', function()
-  local filename = vim.fn.expand("%:p:r")
+  local filename = vim.fn.expand("%:p:r")..".exe"
   vim.cmd("TermExec cmd=\"time " .. filename .. "\"")
   -- vim.cmd("wincmd w")
 end, { silent = true })
