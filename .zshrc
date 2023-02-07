@@ -12,8 +12,8 @@ SAVEHIST=1000
 setopt autocd extendedglob
 unsetopt beep
 # bindkey -v
-bindkey  "^[[1~"   beginning-of-line
-bindkey  "^[[4~"   end-of-line
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
 
 
