@@ -10,7 +10,7 @@ end
 -- stylua: ignore start
 require('packer').startup(
   { function(use)
---use "brglng/vim-im-select"
+    --use "brglng/vim-im-select"
     use 'wbthomason/packer.nvim' -- Package manager
     use 'kylechui/nvim-surround' -- Git commands in nvim
     use 'tpope/vim-fugitive' -- Git commands in nvim
@@ -54,6 +54,11 @@ require('packer').startup(
 
     -- Fuzzy Finder (files, lsp, etc)
     use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
+
+    use {
+      'glacambre/firenvim',
+      run = function() vim.fn['firenvim#install'](0) end
+    }
 
     -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable "make" == 1 }

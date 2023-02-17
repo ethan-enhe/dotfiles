@@ -57,59 +57,58 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 
 -- Setup mason so it can manage external tooling
 require('mason').setup({
-
-  github = {
-    -- The template URL to use when downloading assets from GitHub.
-    -- The placeholders are the following (in order):
-    -- 1. The repository (e.g. "rust-lang/rust-analyzer")
-    -- 2. The release version (e.g. "v0.3.0")
-    -- 3. The asset name (e.g. "rust-analyzer-v0.3.0-x86_64-unknown-linux-gnu.tar.gz")
-    download_url_template = "https://hub.nuaa.cf/%s/releases/download/%s/%s",
-  },
+    github = {
+        -- The template URL to use when downloading assets from GitHub.
+        -- The placeholders are the following (in order):
+        -- 1. The repository (e.g. "rust-lang/rust-analyzer")
+        -- 2. The release version (e.g. "v0.3.0")
+        -- 3. The asset name (e.g. "rust-analyzer-v0.3.0-x86_64-unknown-linux-gnu.tar.gz")
+        download_url_template = "https://hub.nuaa.cf/%s/releases/download/%s/%s",
+    },
 })
 
 -- Enable the following language servers
 -- local servers = { 'clangd', 'pyright', 'sumneko_lua' }
-local servers = { 'clangd', 'sumneko_lua' }
+local servers = { 'clangd'}
 
 -- Ensure the servers above are installed
 require('mason-lspconfig').setup {
-  ensure_installed = servers,
+    ensure_installed = servers,
 }
 
 for _, lsp in ipairs(servers) do
   require('lspconfig')[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
+      on_attach = on_attach,
+      capabilities = capabilities,
   }
 end
 -- Example custom configuration for lua
 --
 -- Make runtime files discoverable to the server
-local runtime_path = vim.split(package.path, ';')
-table.insert(runtime_path, 'lua/?.lua')
-table.insert(runtime_path, 'lua/?/init.lua')
+-- local runtime_path = vim.split(package.path, ';')
+-- table.insert(runtime_path, 'lua/?.lua')
+-- table.insert(runtime_path, 'lua/?/init.lua')
 
-require('lspconfig').sumneko_lua.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT)
-        version = 'LuaJIT',
-        -- Setup your lua path
-        path = runtime_path,
-      },
-      diagnostics = {
-        globals = { 'vim' },
-      },
-      workspace = { library = vim.api.nvim_get_runtime_file('', true) },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = { enable = false },
-    },
-  },
-}
+-- require('lspconfig').sumneko_lua.setup {
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--     settings = {
+--         Lua = {
+--             runtime = {
+--                 -- Tell the language server which version of Lua you're using (most likely LuaJIT)
+--                 version = 'LuaJIT',
+--                 -- Setup your lua path
+--                 path = runtime_path,
+--             },
+--             diagnostics = {
+--                 globals = { 'vim' },
+--             },
+--             workspace = { library = vim.api.nvim_get_runtime_file('', true) },
+--             -- Do not send telemetry data containing a randomized but unique identifier
+--             telemetry = { enable = false },
+--         },
+--     },
+-- }
 
 -- map <f9> :!g++ -Wall -O2 % -o %<<cr>
 -- map <f8> :!\time -f "M: \%M T: \%U" ./%<<cr>
@@ -118,7 +117,7 @@ vim.keymap.set('n', '<f9>', function()
   local filename = vim.fn.expand("%:p")
   vim.cmd [[w]]
   vim.cmd("TermExec cmd=\"g++ -std=c++17 -lm -Wall -O2 -fsanitize=address,undefined -D LOCAL " ..
-    filename .. " -o " .. exename .. "\"")
+  filename .. " -o " .. exename .. "\"")
 end, { silent = true })
 
 vim.keymap.set('n', '<leader><f9>', function()
@@ -126,7 +125,7 @@ vim.keymap.set('n', '<leader><f9>', function()
   local filename = vim.fn.expand("%:p")
   vim.cmd [[w]]
   vim.cmd("TermExec cmd=\"g++ -std=c++17 -lm -Wall -O3 -march=native  -fopenmp -lpthread " ..
-    filename .. " -o " .. exename .. "\"")
+  filename .. " -o " .. exename .. "\"")
 end, { silent = true })
 
 vim.keymap.set('n', '<f8>', function()
