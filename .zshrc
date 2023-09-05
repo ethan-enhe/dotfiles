@@ -11,7 +11,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd extendedglob
 unsetopt beep
-# bindkey -v
+bindkey -e
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
@@ -31,8 +31,15 @@ compinit
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source ~/.bashrc
+# source ~/.bashrc
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source /usr/share/autojump/autojump.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+
+ulimit -s unlimited
+alias ls='ls --color=auto'
+alias config='/usr/bin/git --git-dir=$HOME/Documents/dotfiles --work-tree=$HOME'
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'

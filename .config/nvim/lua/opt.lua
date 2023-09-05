@@ -42,5 +42,7 @@ vim.opt.expandtab = true
 vim.opt.backspace = "indent,eol,start"
 vim.opt.whichwrap:append("<,>,h,l")
 vim.opt.winaltkeys = "no"
+
+vim.opt.makeprg="cmake --build ./build --config Release"
 -- vim.opt.foldenable = true
 -- vim.opt.foldmethod = "marker"

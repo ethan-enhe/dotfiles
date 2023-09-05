@@ -2,6 +2,7 @@ local ls = require("luasnip")
 ls.config.set_config({
   history = true, -- keep around last snippet local to jump back
   enable_autosnippets = true,
+  store_selection_keys = "<Tab>",
   updateevents = "TextChanged,TextChangedI",
 })
 require("luasnip/loaders/from_vscode").lazy_load()

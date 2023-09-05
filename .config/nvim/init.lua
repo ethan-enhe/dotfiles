@@ -39,6 +39,7 @@ require('gitsigns').setup {
 require("nvim-surround").setup {}
 require("nvim-autopairs").setup {}
 
+require "vtex"
 require "ims"
 require "symbo"
 require "tele"
@@ -47,3 +48,4 @@ require "lsp"
 require "compl"
 require "term"
 require "snip"
+require "text"

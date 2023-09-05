@@ -3,7 +3,7 @@ local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nv
 local is_bootstrap = false
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   is_bootstrap = true
-  vim.fn.execute('!git clone https://hub.nuaa.cf/wbthomason/packer.nvim ' .. install_path)
+  vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
   vim.cmd [[packadd packer.nvim]]
 end
 
@@ -26,15 +26,13 @@ require('packer').startup(
     use { 'L3MON4D3/LuaSnip', requires = {
       'saadparwaiz1/cmp_luasnip',
       -- 'honza/vim-snippets',
-      'rafamadriz/friendly-snippets',
+      -- 'rafamadriz/friendly-snippets',
     } } -- Snippet Engine and Snippet Expansion
     use {
       "iurimateus/luasnip-latex-snippets.nvim",
-      -- replace "lervag/vimtex" with "nvim-treesitter/nvim-treesitter" if you're
-      -- using treesitter.
       requires = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
       config = function()
-        require 'luasnip-latex-snippets'.setup({ use_treesitter = true })
+        require 'luasnip-latex-snippets'.setup()
         -- or setup({ use_treesitter = true })
       end,
       ft = "tex",
@@ -78,7 +76,7 @@ require('packer').startup(
       },
       git = {
         clone_timeout = 60, -- Timeout, in seconds, for git clones
-        default_url_format = 'https://hub.nuaa.cf/%s' -- Lua format string used for "aaa/bbb" style plugins
+        -- default_url_format = 'https://hub.nuaa.cf/%s' -- Lua format string used for "aaa/bbb" style plugins
       },
     },
   }
