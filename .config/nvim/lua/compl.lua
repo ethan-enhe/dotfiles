@@ -2,6 +2,7 @@
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 
+-- luasnip.setup{}
 
 cmp.setup {
   snippet = {

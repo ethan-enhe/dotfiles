@@ -1,4 +1,4 @@
-vim.opt.conceallevel=1;
+vim.opt.conceallevel=1
 vim.g.tex_conceal='abdmg'
 vim.cmd[[
   " Compile on initialization, cleanup on quit

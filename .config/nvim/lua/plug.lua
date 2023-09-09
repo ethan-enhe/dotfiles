@@ -29,13 +29,7 @@ require('packer').startup(
       -- 'rafamadriz/friendly-snippets',
     } } -- Snippet Engine and Snippet Expansion
     use {
-      "iurimateus/luasnip-latex-snippets.nvim",
-      requires = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
-      config = function()
-        require 'luasnip-latex-snippets'.setup()
-        -- or setup({ use_treesitter = true })
-      end,
-      ft = "tex",
+      "evesdropper/luasnip-latex-snippets.nvim",
     }
 
     use 'windwp/nvim-autopairs'
