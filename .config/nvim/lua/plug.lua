@@ -22,14 +22,22 @@ require('packer').startup(
     use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
     use 'williamboman/mason.nvim' -- Manage external editor tooling i.e LSP servers
     use 'williamboman/mason-lspconfig.nvim' -- Automatically install language servers to stdpath
-    use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } } -- Autocompletion
+    use { 'hrsh7th/nvim-cmp', requires = {
+      'hrsh7th/cmp-nvim-lsp' ,
+      'hrsh7th/cmp-buffer' ,
+      'hrsh7th/cmp-path' ,
+    } } -- Autocompletion
     use { 'L3MON4D3/LuaSnip', requires = {
       'saadparwaiz1/cmp_luasnip',
-      -- 'honza/vim-snippets',
-      -- 'rafamadriz/friendly-snippets',
     } } -- Snippet Engine and Snippet Expansion
     use {
-      "evesdropper/luasnip-latex-snippets.nvim",
+      "iurimateus/luasnip-latex-snippets.nvim",
+      -- vimtex isn't required if using treesitter
+      requires = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
+      config = function()
+        require'luasnip-latex-snippets'.setup()
+        -- or setup({ use_treesitter = true })
+      end,
     }
 
     use 'windwp/nvim-autopairs'

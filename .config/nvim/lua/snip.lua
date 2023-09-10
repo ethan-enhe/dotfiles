@@ -5,8 +5,8 @@ ls.config.set_config({
   store_selection_keys = "<Tab>",
   updateevents = "TextChanged,TextChangedI",
 })
-require("luasnip.loaders.from_vscode").lazy_load()
-require("luasnip.loaders.from_snipmate").lazy_load()
+-- require("luasnip.loaders.from_vscode").lazy_load()
+-- require("luasnip.loaders.from_snipmate").lazy_load()
 
 ls.filetype_extend("all", { "_" })
 

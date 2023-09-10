@@ -1,7 +1,16 @@
-local ls = require "luasnip"
-local s = ls.snippet
-local t = ls.text_node
-local c = ls.choice_node
-s("choice", { c(1, { t "choice 1", t "choice 2", t "choice 3" }) })
-
-
+return {
+  -- -- Example: how to set snippet parameters
+  -- require("luasnip").snippet(
+  --   { -- Table 1: snippet parameters
+  --     trig="hi",
+  --     dscr="An autotriggering snippet that expands 'hi' into 'Hello, world!'",
+  --     regTrig=false,
+  --     priority=100,
+  --     snippetType="autosnippet"
+  --   },
+  --   { -- Table 2: snippet nodes (don't worry about this for now---we'll cover nodes shortly)
+  --     t("Hello, world!"), -- A single text node
+  --   }
+  --   -- Table 3, the advanced snippet options, is left blank.
+  -- ),
+}
