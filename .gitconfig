@@ -1,3 +1,5 @@
 [user]
+	name = ethan_zhou
 	email = 18201521626@139.com
-	name = ethan
+; [url "https://hub.nuaa.cf/"]
+; 	insteadOf = https://github.com/
