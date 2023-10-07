@@ -69,7 +69,7 @@ require('mason').setup({
 
 -- Enable the following language servers
 -- local servers = { 'clangd', 'pyright', 'sumneko_lua' }
-local servers = { 'clangd'}
+local servers = { 'clangd','svls'}
 
 -- Ensure the servers above are installed
 require('mason-lspconfig').setup {
