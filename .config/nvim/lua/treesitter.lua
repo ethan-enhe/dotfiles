@@ -2,21 +2,21 @@
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python' },
-  ignore_install = { "latex" },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python','vimdoc','lua','vim' },
+  -- ignore_install = { "latex" },
 
   highlight = { 
     enable = true, 
+    disable = { "latex" },
   },
   indent = { enable = true },
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = '<cr>',
-      node_incremental = '<cr>',
-      -- TODO: I'm not sure for this one.
-      scope_incremental = '<tab>',
-      node_decremental = '<bs>',
+      init_selection = '<c-s>',
+      node_incremental = '<c-s>',
+      scope_incremental = '<c-S>',
+      node_decremental = '<M-s>',
     },
   },
   textobjects = {

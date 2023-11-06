@@ -46,7 +46,7 @@ return {
   -- Example: italic font implementing visual selection
   s({
     trig="ti",
-    snippetType="autosnippet",
+    -- snippetType="autosnippet",
     priority=99
   },
     fmta("\\textit{<>}",
@@ -56,10 +56,10 @@ return {
   ),
   s({
     trig="tt",
-    snippetType="autosnippet",
+    -- snippetType="autosnippet",
     priority=99
   },
-    fmta("\\text{<>}",
+    fmta("\\texttt{<>}",
       {
         d(1, get_visual),
       })
@@ -87,8 +87,19 @@ return {
     {condition=tex_utils.in_mathzone}
   ),
   s({
-    trig="tb",
+    trig="dx",
     snippetType="autosnippet",
+    priority=99
+  },
+    fmta("\\mathrm{d}<>",
+      {
+        d(1, get_visual),
+      }),
+    {condition=tex_utils.in_mathzone}
+  ),
+  s({
+    trig="tb",
+    -- snippetType="autosnippet",
     priority=99
   },
     fmta("\\textbf{<>}",
@@ -98,11 +109,11 @@ return {
   ),
   s({
     trig="sec",
-    snippetType="autosnippet",
+    -- snippetType="autosnippet",
     priority=99
   },
     fmta([[
-    \section{<>}
+    \section*{<>}
     ]],
       {
         i(1),
@@ -110,11 +121,11 @@ return {
   ),
   s({
     trig="ssec",
-    snippetType="autosnippet",
+    -- snippetType="autosnippet",
     priority=99
   },
     fmta([[
-    \subsection{<>}
+    \subsection*{<>}
     ]],
       {
         i(1),
@@ -122,7 +133,7 @@ return {
   ),
   s({
     trig="ff",
-    snippetType="autosnippet",
+    -- snippetType="autosnippet",
     priority=99
   },
     fmta([[
@@ -146,6 +157,7 @@ return {
 \usepackage{algorithmic}
 \usepackage{cancel} 
 \usepackage{geometry}
+\usepackage{amsmath}
 \usepackage{graphicx}
 \geometry{a4paper,scale=0.8}
 \usepackage{listings}

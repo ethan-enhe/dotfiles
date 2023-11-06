@@ -3,3 +3,8 @@
 	email = 18201521626@139.com
 ; [url "https://hub.nuaa.cf/"]
 ; 	insteadOf = https://github.com/
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
