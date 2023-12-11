@@ -133,3 +133,8 @@ vim.keymap.set('n', '<f8>', function()
   vim.cmd("TermExec cmd=\"time " .. filename .. "\"")
   -- vim.cmd("wincmd w")
 end, { silent = true })
+vim.keymap.set('n', '<leader><f8>', function()
+  local filename = vim.fn.expand("%:p:r") .. ".exe" .. " < " ..vim.fn.expand("%:p:h") .. "/test.in"
+  vim.cmd("TermExec cmd=\"time " .. filename .. "\"")
+  -- vim.cmd("wincmd w")
+end, { silent = true })
