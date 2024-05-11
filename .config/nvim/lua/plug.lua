@@ -27,9 +27,11 @@ require('packer').startup(
       'hrsh7th/cmp-buffer' ,
       'hrsh7th/cmp-path' ,
     } } -- Autocompletion
+    use 'luozhiya/fittencode.nvim'
     use { 'L3MON4D3/LuaSnip', requires = {
       'saadparwaiz1/cmp_luasnip',
     } } -- Snippet Engine and Snippet Expansion
+
     use {
       "iurimateus/luasnip-latex-snippets.nvim",
       -- vimtex isn't required if using treesitter
@@ -47,8 +49,8 @@ require('packer').startup(
     use 'mjlbach/onedark.nvim' -- Theme inspired by Atom
     use 'sainnhe/edge'
     use 'nvim-lualine/lualine.nvim'
-    -- use 'akinsho/bufferline.nvim'
-    use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
+    -- use { 'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons' }
+    use { 'Theyashsawarkar/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons' }
     use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
     use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
 

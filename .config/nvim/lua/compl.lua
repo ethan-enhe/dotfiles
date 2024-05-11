@@ -62,9 +62,28 @@ cmp.setup {
     end, { 'i', 's' }),
   },
   sources = {
+    -- { name = 'fittencode', group_index = 1 },
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'buffer' },
     { name = 'path' },
   },
 }
+
+local api = vim.api
+local API = require('fittencode.api').api
+local Base = require('fittencode.base')
+
+Base.map('i', '<C-Up>', function()
+  if API.has_suggestions() then
+    API.accept_all_suggestions()
+  else
+    View.tab()
+  end
+end)
+Base.map('i', '<C-Down>', API.accept_line)
+Base.map('i', '<C-Right>', API.accept_word)
+
+require('fittencode').setup({
+  use_default_keymaps=false,
+})

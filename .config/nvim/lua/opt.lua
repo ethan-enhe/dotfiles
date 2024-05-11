@@ -22,7 +22,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Decrease update time
-vim.opt.updatetime = 250
+vim.opt.updatetime = 200
 vim.opt.signcolumn = 'yes'
 
 -- Set colorscheme

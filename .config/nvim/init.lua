@@ -1,21 +1,15 @@
 require "plug"
 require "opt"
 require "map"
+-- local lua_files = vim.api.nvim_get_runtime_file('corecfg', true)
+-- for _, file in ipairs(lua_files) do
+--   if file:match('%.lua$') then
+--     require(file:gsub('%.lua$', ''))
+--   end
+-- end
 
--- [[ Highlight on yank ]]
--- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = '*',
-})
 
 require("bufferline").setup {}
-require "lual"
--- Enable Comment.nvim
 require('Comment').setup()
 
 -- Enable `lukas-reineke/indent-blankline.nvim`
@@ -49,3 +43,6 @@ require "compl"
 require "term"
 require "snip"
 require "text"
+require "lual"
+
+

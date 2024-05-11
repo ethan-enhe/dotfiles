@@ -19,6 +19,7 @@ vim.keymap.set('n', '<C-j>', [[<Cmd>wincmd j<CR>]], { silent = true })
 vim.keymap.set('n', '<C-k>', [[<Cmd>wincmd k<CR>]], { silent = true })
 vim.keymap.set('n', '<C-l>', [[<Cmd>wincmd l<CR>]], { silent = true })
 -- vim.keymap.set('i', 'jj', "<esc>", { noremap = true, silent = true })
+
 vim.keymap.set('n', '<leader>rl', function()
   vim.opt.relativenumber = not vim.opt.relativenumber:get()
 end, { silent = true })
@@ -52,3 +53,15 @@ end, { silent = true })
 vim.keymap.set('n', '<leader>l', '<cmd>bnext<cr>', { silent = true })
 vim.keymap.set('n', '<leader>h', '<cmd>bprevious<cr>', { silent = true })
 vim.keymap.set('n', '<leader><cr>', '<cmd>noh<cr>', { silent = true })
+
+
+-- [[ Highlight on yank ]]
+-- See `:help vim.highlight.on_yank()`
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})

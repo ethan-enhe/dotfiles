@@ -10,3 +10,5 @@
 	smudge = git-lfs smudge -- %f
 [safe]
 	directory = /media/D/document/大二下/OSH
+	directory = /media/D/document/24spring/mustrust
+	directory = /media/D/document/24spring/OSH
