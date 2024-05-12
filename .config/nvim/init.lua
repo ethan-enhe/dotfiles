@@ -1,12 +1,6 @@
 require "plug"
 require "opt"
 require "map"
--- local lua_files = vim.api.nvim_get_runtime_file('corecfg', true)
--- for _, file in ipairs(lua_files) do
---   if file:match('%.lua$') then
---     require(file:gsub('%.lua$', ''))
---   end
--- end
 
 
 require("bufferline").setup {}
@@ -44,5 +38,4 @@ require "term"
 require "snip"
 require "text"
 require "lual"
-
 

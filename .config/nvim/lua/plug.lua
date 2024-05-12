@@ -27,7 +27,30 @@ require('packer').startup(
       'hrsh7th/cmp-buffer' ,
       'hrsh7th/cmp-path' ,
     } } -- Autocompletion
-    use 'luozhiya/fittencode.nvim'
+    -- use 'luozhiya/fittencode.nvim'
+    use {
+      'Exafunction/codeium.vim',
+      config = function ()
+        vim.g.codeium_disable_bindings = 1
+        -- Change '<C-g>' here to any keycode you like.
+        vim.keymap.set('i', '<c-Right>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+        vim.keymap.set('i', '<c-Down>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+        vim.keymap.set('i', '<c-Up>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+        vim.keymap.set('i', '<c-Left>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+      end
+    }
+    -- use {
+    --   "Exafunction/codeium.nvim",
+    --   requires = {
+    --     "nvim-lua/plenary.nvim",
+    --     "hrsh7th/nvim-cmp",
+    --   },
+    --   config = function()
+    --     require("codeium").setup({
+    --     })
+    --   end
+    -- }
+
     use { 'L3MON4D3/LuaSnip', requires = {
       'saadparwaiz1/cmp_luasnip',
     } } -- Snippet Engine and Snippet Expansion
