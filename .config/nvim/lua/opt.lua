@@ -48,5 +48,6 @@ vim.opt.whichwrap:append("<,>,h,l")
 vim.opt.winaltkeys = "no"
 
 vim.opt.makeprg="cmake --build ./build --config Release"
+vim.opt.fileencodings = 'utf8,cp936,gb18030,big5'
 -- vim.opt.foldenable = true
 -- vim.opt.foldmethod = "marker"
