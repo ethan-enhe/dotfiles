@@ -1,10 +1,8 @@
+local api = require('nvim-tree.api')
+local function opts(desc)
+  return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+end
 local function my_on_attach()
-  local api = require('nvim-tree.api')
-
-  local function opts(desc)
-    return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-  end
-
   -- BEGIN_DEFAULT_ON_ATTACH
   -- vim.keymap.set('n', '<C-]>',   api.tree.change_root_to_node,        opts('CD'))
   -- vim.keymap.set('n', '<C-e>',   api.node.open.replace_tree_buffer,   opts('Open: In Place'))
@@ -14,8 +12,8 @@ local function my_on_attach()
   -- vim.keymap.set('n', '<C-v>',   api.node.open.vertical,              opts('Open: Vertical Split'))
   -- vim.keymap.set('n', '<C-x>',   api.node.open.horizontal,            opts('Open: Horizontal Split'))
   -- vim.keymap.set('n', '<BS>',    api.node.navigate.parent_close,      opts('Close Directory'))
-  -- vim.keymap.set('n', '<CR>',    api.node.open.edit,                  opts('Open'))
-  -- vim.keymap.set('n', '<Tab>',   api.node.open.preview,               opts('Open Preview'))
+  vim.keymap.set('n', '<CR>',    api.node.open.edit,                  opts('Open'))
+  vim.keymap.set('n', '<Tab>',   api.node.open.preview,               opts('Open Preview'))
   -- vim.keymap.set('n', '>',       api.node.navigate.sibling.next,      opts('Next Sibling'))
   -- vim.keymap.set('n', '<',       api.node.navigate.sibling.prev,      opts('Previous Sibling'))
   -- vim.keymap.set('n', '.',       api.node.run.cmd,                    opts('Run Command'))
@@ -62,11 +60,13 @@ local function my_on_attach()
   -- vim.keymap.set('n', 'x',       api.fs.cut,                          opts('Cut'))
   -- vim.keymap.set('n', 'y',       api.fs.copy.filename,                opts('Copy Name'))
   -- vim.keymap.set('n', 'Y',       api.fs.copy.relative_path,           opts('Copy Relative Path'))
-  -- vim.keymap.set('n', '<2-LeftMouse>',  api.node.open.edit,           opts('Open'))
-  -- vim.keymap.set('n', '<2-RightMouse>', api.tree.change_root_to_node, opts('CD'))
+  vim.keymap.set('n', '<2-LeftMouse>',  api.node.open.edit,           opts('Open'))
+  vim.keymap.set('n', '<2-RightMouse>', api.tree.change_root_to_node, opts('CD'))
   -- END_DEFAULT_ON_ATTACH
-  vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { silent = true })
+
+  -- api.config.mappings.default_on_attach(bufnr)
 end
+vim.keymap.set('n', '<leader>te',api.tree.toggle, { silent = true }, opts('Toggle Tree'))
 
 
 require'nvim-tree'.setup {

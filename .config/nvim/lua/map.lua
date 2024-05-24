@@ -26,7 +26,7 @@ vim.keymap.set('n', '<leader>rl', function()
 end, { silent = true })
 vim.keymap.set('n', '<leader>w', '<cmd>w!<cr>', { silent = true })
 vim.keymap.set('n', '<leader>s', '<cmd>source %<cr>', { silent = true })
-vim.keymap.set('n', '<leader>c', '<cmd>cd %:p:h<cr><cmd>pwd<cr>', { silent = true })
+vim.keymap.set('n', '<leader>cd', '<cmd>cd %:p:h<cr><cmd>pwd<cr>', { silent = true })
 
 vim.keymap.set('n', '<leader>tt', '<cmd>0 r ~/Documents/mycode/template/other/cf.cpp<cr>', { silent = true })
 vim.keymap.set('n', '<leader>tr', ':r ~/Documents/mycode/template/', { silent = true })
