@@ -48,8 +48,8 @@ require('packer').startup(
     use 'mjlbach/onedark.nvim' -- Theme inspired by Atom
     use 'sainnhe/edge'
     use 'nvim-lualine/lualine.nvim'
-    -- use { 'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons' }
-    use { 'Theyashsawarkar/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons' }
+    use { 'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons' }
+    -- use { 'Theyashsawarkar/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons' }
     use { 'nvim-tree/nvim-tree.lua',requires = 'nvim-tree/nvim-web-devicons'}
     use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
     use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
