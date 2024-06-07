@@ -1,5 +1,5 @@
-require "plug"
 require "opt"
+require "plug"
 require "map"
 
 -- iterate through and require all .lua plug config files under `./lua/plugcfg` directory

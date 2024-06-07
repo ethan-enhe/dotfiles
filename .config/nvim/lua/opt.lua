@@ -29,11 +29,6 @@ vim.opt.smartcase = true
 vim.opt.updatetime = 200
 vim.opt.signcolumn = 'yes'
 
--- Set colorscheme
-vim.opt.termguicolors = true
-vim.g.edge_style = 'aura'
-vim.g.edge_better_performance = 1
-vim.cmd [[colorscheme edge]]
 
 -- Set completeopt to have a better completion experience
 vim.opt.completeopt = 'menuone,noselect'
