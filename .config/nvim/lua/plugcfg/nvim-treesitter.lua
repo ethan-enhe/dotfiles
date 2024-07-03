@@ -2,21 +2,21 @@
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python','vimdoc','lua','vim' ,'verilog'},
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python','vimdoc','lua','vim' ,'verilog','latex','markdown'},
   -- ignore_install = { "latex" },
 
   highlight = { 
     enable = true, 
-    disable = { "latex" },
+    disable = { "latex"},
   },
   indent = { enable = true },
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = '<c-s>',
-      node_incremental = '<c-s>',
-      scope_incremental = '<c-S>',
-      node_decremental = '<M-s>',
+      init_selection = "gnn", -- set to `false` to disable one of the mappings
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
     },
   },
   textobjects = {
@@ -64,8 +64,8 @@ require('nvim-treesitter.configs').setup {
 }
 local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
 ts_update()
-vim.opt.foldmethod = 'marker'
--- vim.opt.foldmethod = 'expr'
--- vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
--- vim.opt.foldlevel = 99
--- vim.opt.foldminlines = 10
+-- vim.opt.foldmethod = 'marker'
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldlevel = 99
+vim.opt.foldminlines = 10

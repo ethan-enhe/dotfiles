@@ -193,3 +193,4 @@ ex ()
 
 ulimit -s unlimited
 alias config='/usr/bin/git --git-dir=$HOME/Documents/dotfiles --work-tree=$HOME'
+

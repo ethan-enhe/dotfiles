@@ -37,11 +37,17 @@ require('lazy').setup({
   } }, -- Autocompletion
   {'numToStr/Comment.nvim'},
   -- {'luozhiya/fittencode.nvim'},
-  {'Exafunction/codeium.vim'},
-  { 'L3MON4D3/LuaSnip', dependencies = { 'saadparwaiz1/cmp_luasnip' } }, -- Snippet Engine and Snippet Expansion
+  {'Exafunction/codeium.vim', commit = "289eb724e5d6fab2263e94a1ad6e54afebefafb2"},
+  { 'L3MON4D3/LuaSnip', dependencies = { 'saadparwaiz1/cmp_luasnip', 'rafamadriz/friendly-snippets'  } }, -- Snippet Engine and Snippet Expansion
 
   { "iurimateus/luasnip-latex-snippets.nvim", dependencies = { "L3MON4D3/LuaSnip", "lervag/vimtex" }  },
-
+  -- install without yarn or npm
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
   {'windwp/nvim-autopairs'},
   {'lervag/vimtex'},
   {'mjlbach/onedark.nvim'}, -- Theme inspired by Atom

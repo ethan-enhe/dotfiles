@@ -43,3 +43,8 @@ ulimit -s unlimited
 alias ls='ls --color=auto'
 alias config='/usr/bin/git --git-dir=$HOME/Documents/dotfiles --work-tree=$HOME'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+
+
+# Install Ruby Gems to ~/gems
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH
