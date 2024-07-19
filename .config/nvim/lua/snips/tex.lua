@@ -158,6 +158,11 @@ return {
 \usepackage{cancel} 
 \usepackage{geometry}
 \usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\renewcommand{\proofname}{\textbf{Proof}}
 \usepackage{graphicx}
 \geometry{a4paper,scale=0.8}
 \usepackage{listings}

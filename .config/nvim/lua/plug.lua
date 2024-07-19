@@ -40,7 +40,14 @@ require('lazy').setup({
   {'Exafunction/codeium.vim', commit = "289eb724e5d6fab2263e94a1ad6e54afebefafb2"},
   { 'L3MON4D3/LuaSnip', dependencies = { 'saadparwaiz1/cmp_luasnip', 'rafamadriz/friendly-snippets'  } }, -- Snippet Engine and Snippet Expansion
 
-  { "iurimateus/luasnip-latex-snippets.nvim", dependencies = { "L3MON4D3/LuaSnip", "lervag/vimtex" }  },
+  {
+    "iurimateus/luasnip-latex-snippets.nvim",
+    dependencies = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
+    ft = { "tex" }, -- 只在 LaTeX 文件类型加载插件
+    config = function()
+      require("luasnip-latex-snippets").setup()
+    end,
+  },
   -- install without yarn or npm
   {
     "iamcco/markdown-preview.nvim",

@@ -1,1 +1,1 @@
-require'luasnip-latex-snippets'.setup()
+-- require'luasnip-latex-snippets'.setup()
