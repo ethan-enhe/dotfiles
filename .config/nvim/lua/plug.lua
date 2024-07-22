@@ -43,9 +43,12 @@ require('lazy').setup({
   {
     "iurimateus/luasnip-latex-snippets.nvim",
     dependencies = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
-    ft = { "tex" }, -- 只在 LaTeX 文件类型加载插件
+    -- ft = { "tex" }, -- 只在 LaTeX 文件类型加载插件
     config = function()
-      require("luasnip-latex-snippets").setup()
+      require("luasnip-latex-snippets").setup({
+        use_treesitter = false, -- whether to use treesitter to determine if cursor is in math mode; if false, vimtex is used
+        allow_on_markdown = true, -- whether to add snippets to markdown filetype
+      })
     end,
   },
   -- install without yarn or npm
