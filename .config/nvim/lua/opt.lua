@@ -46,3 +46,30 @@ vim.opt.makeprg="cmake --build ./build --config Release"
 vim.opt.fileencodings = 'utf8,cp936,gb18030,big5'
 -- vim.opt.foldenable = true
 -- vim.opt.foldmethod = "marker"
+
+if vim.g.neovide then
+  -- Put anything you want to happen only in Neovide here
+  vim.o.guifont = "FiraCode Nerd Font Mono:h11" -- text below applies for VimScript
+  -- vim.g.neovide_transparency = 0.85
+  local function set_ime(args)
+    if args.event:match("Enter$") then
+      vim.g.neovide_input_ime = true
+    else
+      vim.g.neovide_input_ime = false
+    end
+  end
+  
+  local ime_input = vim.api.nvim_create_augroup("ime_input", { clear = true })
+  
+  vim.api.nvim_create_autocmd({ "InsertEnter", "InsertLeave" }, {
+    group = ime_input,
+    pattern = "*",
+    callback = set_ime
+  })
+  
+  vim.api.nvim_create_autocmd({ "CmdlineEnter", "CmdlineLeave" }, {
+    group = ime_input,
+    pattern = "[/\\?]",
+    callback = set_ime
+  })
+end
