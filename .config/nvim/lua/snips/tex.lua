@@ -152,42 +152,82 @@ return {
     snippetType="autosnippet",
     priority=99
   },fmta([[
-\documentclass[UTF8]{ctexart}
+\documentclass[UTF8, 12pt]{ctexart} % 设置默认字体大小为 12pt
+
+% 使用更适合论文的数学包和字体设置
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools} % 提供 amsmath 的扩展
+\usepackage{mathrsfs} % 提供花体字体
+
+% 设置页面几何结构
+\usepackage[a4paper, margin=1in]{geometry}
+
+% 设置算法环境
 \usepackage{algorithm}
-\usepackage{algorithmic}
-\usepackage{cancel} 
-\usepackage{geometry}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{corollary}{Corollary}[theorem]
-\newtheorem{lemma}[theorem]{Lemma}
-\renewcommand{\proofname}{\textbf{Proof}}
-\usepackage{graphicx}
-\geometry{a4paper,scale=0.8}
-\usepackage{listings}
+\usepackage[noend]{algorithmic} % 去掉end关键字，更简洁
+
+% 设置颜色和代码高亮
 \usepackage[dvipsnames]{xcolor}
-% 在导言区进行样式设置
-\lstset{
-        language=C++, % 设置语言
-        basicstyle=\ttfamily, % 设置字体族
-        breaklines=true, % 自动换行
-        keywordstyle=\bfseries\color{NavyBlue}, % 设置关键字为粗体，颜色为 NavyBlue
-        morekeywords={}, % 设置更多的关键字，用逗号分隔
-        emph={self}, % 指定强调词，如果有多个，用逗号隔开
-        emphstyle=\bfseries\color{Rhodamine}, % 强调词样式设置
-        commentstyle=\itshape\color{black!50!white}, % 设置注释样式，斜体，浅灰色
-        stringstyle=\bfseries\color{PineGreen!90!black}, % 设置字符串样式
-        columns=flexible,
-        numbers=left, % 显示行号在左边
-        numbersep=2em, % 设置行号的具体位置
-        numberstyle=\footnotesize, % 缩小行号
-        frame=single, % 边框
-        framesep=1em % 设置代码与边框的距离
+\usepackage{listings}
+
+% 图形支持
+\usepackage{graphicx}
+
+% 超链接
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
 }
+
+% 定理环境
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\renewcommand{\proofname}{\textbf{Proof}}
+
+% 自定义命令
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+
+% 设置代码样式
+\lstset{
+    language=C++, % 设置语言
+    basicstyle=\ttfamily\footnotesize, % 设置字体族和大小
+    breaklines=true, % 自动换行
+    keywordstyle=\bfseries\color{NavyBlue}, % 设置关键字为粗体，颜色为 NavyBlue
+    morekeywords={}, % 设置更多的关键字，用逗号分隔
+    emph={self}, % 指定强调词，如果有多个，用逗号隔开
+    emphstyle=\bfseries\color{Rhodamine}, % 强调词样式设置
+    commentstyle=\itshape\color{black!50!white}, % 设置注释样式，斜体，浅灰色
+    stringstyle=\bfseries\color{PineGreen!90!black}, % 设置字符串样式
+    columns=flexible,
+    numbers=left, % 显示行号在左边
+    numbersep=5pt, % 设置行号的具体位置
+    numberstyle=\tiny\color{gray}, % 缩小行号并设置颜色
+    frame=single, % 边框
+    framesep=1em % 设置代码与边框的距离
+}
+
+% 设置行距
+\usepackage{setspace}
+\onehalfspacing % 1.5倍行距
+
+% 文章信息
 \title{<>}
-\author{周翟恩和 PB22000008}
-\date{\today}
+\author{Zhaienhe Zhou \\ \texttt{zehzhou@mail.ustc.edu.cn}}
+\date{}
 \begin{document}
 \maketitle
 <>
