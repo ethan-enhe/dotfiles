@@ -50,7 +50,7 @@ vim.opt.fileencodings = 'utf8,cp936,gb18030,big5'
 if vim.g.neovide then
   -- Put anything you want to happen only in Neovide here
   vim.o.guifont = "FiraCode Nerd Font Mono:h11" -- text below applies for VimScript
-  -- vim.g.neovide_transparency = 0.85
+  vim.g.neovide_transparency = 0.85
   local function set_ime(args)
     if args.event:match("Enter$") then
       vim.g.neovide_input_ime = true
