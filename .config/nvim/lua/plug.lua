@@ -19,6 +19,10 @@ vim.opt.rtp:prepend(lazypath)
 
 -- stylua: ignore start
 require('lazy').setup({
+  {
+    "h-hg/fcitx.nvim",
+    cond = vim.fn.executable("fcitx5-remote") == 1,
+  },
   {'kylechui/nvim-surround'},
   {'tpope/vim-fugitive'}, -- Git commands in nvim
   { 'lewis6991/gitsigns.nvim', dependencies = { 'nvim-lua/plenary.nvim' } }, -- Add git related info in the signs columns and popups
