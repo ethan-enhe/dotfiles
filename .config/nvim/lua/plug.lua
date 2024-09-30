@@ -43,7 +43,13 @@ require('lazy').setup({
   -- {'luozhiya/fittencode.nvim'},
   -- {'Exafunction/codeium.vim', commit = "289eb724e5d6fab2263e94a1ad6e54afebefafb2"},
   {'Exafunction/codeium.vim'},
-  { 'L3MON4D3/LuaSnip', dependencies = { 'saadparwaiz1/cmp_luasnip', 'rafamadriz/friendly-snippets'  } }, -- Snippet Engine and Snippet Expansion
+  {
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = "make install_jsregexp"
+  },
 
   {
     "iurimateus/luasnip-latex-snippets.nvim",
