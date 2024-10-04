@@ -2,7 +2,7 @@
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python','vimdoc','lua','vim' ,'verilog','latex'},
+  ensure_installed = { 'c', 'cpp',  'lua', 'python','vimdoc','lua','vim' ,'latex','html'},
   -- ignore_install = { "latex" },
 
   highlight = { 
@@ -65,7 +65,7 @@ require('nvim-treesitter.configs').setup {
 local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
 ts_update()
 -- vim.opt.foldmethod = 'marker'
-vim.opt.foldmethod = 'indent'
+-- vim.opt.foldmethod = 'indent'
 -- vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.opt.foldlevel = 99
-vim.opt.foldminlines = 10
+-- vim.opt.foldlevel = 99
+-- vim.opt.foldminlines = 10

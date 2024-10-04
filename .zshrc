@@ -48,3 +48,4 @@ alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 # Install Ruby Gems to ~/gems
 export GEM_HOME=$HOME/gems
 export PATH=$HOME/gems/bin:$PATH
+export GTK_USE_PORTAL=1

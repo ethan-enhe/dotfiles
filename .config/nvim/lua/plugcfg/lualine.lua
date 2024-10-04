@@ -3,7 +3,8 @@
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'edge',
+    -- theme = 'edge',
+    theme = 'catppuccin',
   },
   sections = {
     lualine_a = { 'mode' },

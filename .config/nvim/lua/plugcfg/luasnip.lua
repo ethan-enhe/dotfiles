@@ -12,4 +12,5 @@ ls.filetype_extend("all", { "_" })
 
 local snippets_folder = vim.fn.stdpath "config" .. "/lua/snips/"
 require("luasnip.loaders.from_lua").lazy_load { paths = snippets_folder }
+require("luasnip.loaders.from_vscode").lazy_load()
 vim.cmd [[command! LuaSnipEdit :lua require("luasnip.loaders.from_lua").edit_snippet_files()]]
