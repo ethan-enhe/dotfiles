@@ -1,21 +1,22 @@
 return {
-  {
-    'h-hg/fcitx.nvim',
-    cond = vim.fn.executable('fcitx5-remote') == 1,
+  {'kylechui/nvim-surround',
+    config=function ()
+      require("nvim-surround").setup {}
+    end
   },
-  {'kylechui/nvim-surround'},
   {'tpope/vim-fugitive'}, -- Git commands in nvim
-  { 'lewis6991/gitsigns.nvim', dependencies = { 'nvim-lua/plenary.nvim' } }, -- Add git related info in the signs columns and popups
-  {'nvim-treesitter/nvim-treesitter'}, -- Highlight, edit, and navigate code
-  { 'nvim-treesitter/nvim-treesitter-textobjects', dependencies = { 'nvim-treesitter' } }, -- Additional textobjects for treesitter
-  {'hedyhli/outline.nvim'},
-  { 'hrsh7th/nvim-cmp', dependencies = {
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'saadparwaiz1/cmp_luasnip' ,
-  } }, -- Autocompletion
-  {'numToStr/Comment.nvim'},
+  {'hedyhli/outline.nvim',
+    config=function ()
+      vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
+      require("outline").setup {
+      }
+    end
+  },
+  {'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  },
   -- {'luozhiya/fittencode.nvim'},
   -- {'Exafunction/codeium.vim'},
   {
@@ -45,33 +46,17 @@ return {
     ft = { 'markdown' },
     build = function() vim.fn['mkdp#util#install']() end,
   },
-  {'windwp/nvim-autopairs'},
-  {'mjlbach/onedark.nvim'}, -- Theme inspired by Atom
-  {'sainnhe/edge'},
-  { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
-  {'nvim-lualine/lualine.nvim'},
-  { 'nvim-tree/nvim-tree.lua', dependencies = 'nvim-tree/nvim-web-devicons' },
-  {'lukas-reineke/indent-blankline.nvim'}, -- Add indentation guides even on blank lines
-  {'tpope/vim-sleuth'}, -- Detect tabstop and shiftwidth automatically
-
-  -- Fuzzy Finder (files, lsp, etc)
-  { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
-  -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = function() return vim.fn.executable('make') == 1 end },
-  { 'akinsho/toggleterm.nvim' },
-  {
-    'OXY2DEV/markview.nvim',
-    lazy = false,      -- Recommended
-    -- ft = 'markdown' -- If you decide to lazy-load anyway
-
-    dependencies = {
-      -- You will not need this if you installed the
-      -- parsers manually
-      -- Or if the parsers are in your $RUNTIMEPATH
-      'nvim-treesitter/nvim-treesitter',
-      'nvim-tree/nvim-web-devicons'
-    }
+  {'windwp/nvim-autopairs',
+    config=function ()
+      require("nvim-autopairs").setup {}
+    end
   },
+  {'lukas-reineke/indent-blankline.nvim',
+    config=function ()
+      require("ibl").setup()
+    end
+  }, -- Add indentation guides even on blank lines
+  {'tpope/vim-sleuth'}, -- Detect tabstop and shiftwidth automatically
   {
     "goolord/alpha-nvim",
     -- dependencies = { 'echasnovski/mini.icons' },

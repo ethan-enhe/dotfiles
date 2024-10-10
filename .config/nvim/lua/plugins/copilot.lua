@@ -20,6 +20,7 @@ return {
         },
         filetypes = {
           markdown = true,
+          lua = true,
         },
       })
     end,
