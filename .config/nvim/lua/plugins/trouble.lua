@@ -15,6 +15,19 @@ return {
           zindex = 200,
         },
       },
+      qf_preview_float = {
+        mode = "quickfix",
+        preview = {
+          type = "float",
+          relative = "editor",
+          border = "rounded",
+          title = "Preview",
+          title_pos = "center",
+          position = { 0, -2 },
+          size = { width = 0.3, height = 0.3 },
+          zindex = 200,
+        },
+      },
     },
   }, -- for default options, refer to the configuration section for custom setup.
   cmd = "Trouble",
@@ -45,8 +58,8 @@ return {
       desc = "Location List (Trouble)",
     },
     {
-      "<leader>xQ",
-      "<cmd>Trouble qflist toggle<cr>",
+      "<leader>xq",
+      "<cmd>Trouble qf_preview_float toggle<cr>",
       desc = "Quickfix List (Trouble)",
     },
   },
