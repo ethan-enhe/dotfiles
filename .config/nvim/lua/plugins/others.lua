@@ -4,14 +4,13 @@ return {
       require("nvim-surround").setup {}
     end
   },
-  {'tpope/vim-fugitive'}, -- Git commands in nvim
-  {'hedyhli/outline.nvim',
-    config=function ()
-      vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
-      require("outline").setup {
-      }
-    end
-  },
+  -- {'hedyhli/outline.nvim',
+  --   config=function ()
+  --     vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
+  --     require("outline").setup {
+  --     }
+  --   end
+  -- },
   {'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup()

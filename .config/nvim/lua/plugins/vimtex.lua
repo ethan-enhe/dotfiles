@@ -1,6 +1,7 @@
 return {
   'lervag/vimtex',
   config = function()
+    vim.g.vimtex_quickfix_mode=0
     vim.g.vimtex_quickfix_ignore_filters = {'Underfull','Overfull'}
     vim.opt.conceallevel=1
     vim.g.tex_conceal='abdmg'
