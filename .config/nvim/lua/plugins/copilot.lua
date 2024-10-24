@@ -203,7 +203,7 @@ return {
       -- Chat with Copilot in visual mode
       {
         "<leader>av",
-        ":CopilotChatVisual",
+        ":CopilotChatVisual<cr>",
         mode = "x",
         desc = "CopilotChat - Open in vertical split",
       },

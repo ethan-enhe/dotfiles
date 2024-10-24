@@ -4,6 +4,7 @@ return {
     require("toggleterm").setup({
       size = 10,
       open_mapping = "<f12>",
+      shade_terminals = false,
       -- direction = "float",
       -- float_opts = {
       --   border = "curved"
@@ -26,4 +27,5 @@ return {
     vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
   end
 }
+
 

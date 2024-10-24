@@ -42,7 +42,7 @@ vim.opt.backspace = "indent,eol,start"
 vim.opt.whichwrap:append("<,>,h,l")
 vim.opt.winaltkeys = "no"
 
-vim.opt.makeprg="cmake --build ./build --config Release"
+-- vim.opt.makeprg="cmake --build ./build --config Release"
 vim.opt.fileencodings = 'utf8,cp936,gb18030,big5'
 -- vim.opt.foldenable = true
 -- vim.opt.foldmethod = "marker"
@@ -51,7 +51,8 @@ vim.opt.termguicolors = true
 if vim.g.neovide then
   -- Put anything you want to happen only in Neovide here
   vim.o.guifont = "FiraCode Nerd Font Mono:h11" -- text below applies for VimScript
-  vim.g.neovide_transparency = 0.85
+  vim.g.neovide_transparency = 0.80
+  -- vim.g.neovide_window_blurred= true
   -- local function set_ime(args)
   --   if args.event:match("Enter$") then
   --     vim.g.neovide_input_ime = true
@@ -74,3 +75,4 @@ if vim.g.neovide then
   --   callback = set_ime
   -- })
 end
+-- vim.env.GIT_EDITOR = 'nvr -cc split --remote-wait'
