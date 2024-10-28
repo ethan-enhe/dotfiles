@@ -16,6 +16,7 @@ Number=4
 Rows=1
 
 [Effect-blurplus]
+BlurStrength=10
 BottomCornerRadius=10
 DockCornerRadius=10
 MenuCornerRadius=10
@@ -48,6 +49,7 @@ LongitudeFixed=116.39
 [Plugins]
 blurEnabled=false
 center-new-windowsEnabled=true
+contrastEnabled=true
 forceblurEnabled=true
 krohnkiteEnabled=true
 lattewindowcolorsEnabled=true
