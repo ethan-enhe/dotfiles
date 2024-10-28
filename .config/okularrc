@@ -1,0 +1,52 @@
+1440x900 screen: Window-Maximized=true
+MenuBar=Disabled
+
+[Desktop Entry]
+FullScreen=false
+
+[General]
+LockSidebar=true
+ShowSidebar=false
+
+[MainWindow]
+1440x900 screen: Height=848
+1440x900 screen: Width=1440
+1440x900 screen: Window-Maximized=true
+1440x900 screen: XPosition=0
+1440x900 screen: YPosition=52
+2 screens: XPosition=576
+2 screens: YPosition=415
+2880x1800 screen: Window-Maximized=true
+2880x1800 screen: XPosition=576
+2880x1800 screen: YPosition=433
+HDMI-1 eDP-1=eDP-1
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+eDP-1=eDP-1
+eDP-1 Height 1440x900 eDP-1=552
+eDP-1 Width 1440x900 eDP-1=716
+eDP-1 Window-Maximized 1440x900 eDP-1=true
+eDP-1 XPosition 1440x900 eDP-1=451
+eDP-1 YPosition 1440x900 eDP-1=171
+
+[Recent Files]
+File1[$e]=/media/D/document/24fall/Worldfinal/周翟恩和 报销材料/飞机发票/订单34670789436电子普通发票.pdf
+File10[$e]=/media/D/document/24fall/compile/hw2/hw.md
+File2[$e]=/media/D/document/24fall/Worldfinal/周翟恩和 报销材料/飞机发票/订单34670741244电子普通发票.pdf
+File3[$e]=/media/D/document/24fall/Worldfinal/周翟恩和 报销材料/飞机发票/英文版报销凭证.pdf
+File4[$e]=/media/D/document/24fall/Worldfinal/周翟恩和 报销材料/飞机发票/机票出行单.pdf
+File5[$e]=/media/D/document/24fall/Worldfinal/周翟恩和 报销材料/飞机发票/合肥-乌鲁木齐.pdf
+File6[$e]=/media/D/document/24fall/Worldfinal/周翟恩和 报销材料/飞机发票/阿斯塔纳-西安.pdf
+File7[$e]=/media/D/document/24fall/Worldfinal/HostInvitationWF.pdf
+File8[$e]=/media/D/document/24fall/Worldfinal/周翟恩和 报销材料/保险电子保单/平安境外旅游险-电子保单.pdf
+File9[$e]=/media/D/document/24fall/compile/hw2/homework2 (1).pdf
+Name1[$e]=订单34670789436电子普通发票.pdf
+Name10[$e]=hw.md
+Name2[$e]=订单34670741244电子普通发票.pdf
+Name3[$e]=英文版报销凭证.pdf
+Name4[$e]=机票出行单.pdf
+Name5[$e]=合肥-乌鲁木齐.pdf
+Name6[$e]=阿斯塔纳-西安.pdf
+Name7[$e]=HostInvitationWF.pdf
+Name8[$e]=平安境外旅游险-电子保单.pdf
+Name9[$e]=homework2 (1).pdf

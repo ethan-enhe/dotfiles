@@ -1,0 +1,19 @@
+[Animation]
+Frames=15
+
+[Appearance]
+Blur=true
+HideSkinBorders=true
+Translucency=true
+
+[Desktop Entry]
+DefaultProfile=Profile 1.profile
+
+[Dialogs]
+FirstRun=false
+
+[Window]
+KeepOpenAfterLastSessionCloses=true
+ShowTabBar=false
+ShowTitleBar=false
+Width=80

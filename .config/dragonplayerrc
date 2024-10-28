@@ -1,0 +1,312 @@
+[General]
+BrowserApplication[$d]
+ColorScheme[$d]
+ColorSchemeHash[$d]
+File1[$e]=$HOME/Downloads/DS-160表格的填法.mp4
+File10[$e]=/media/D/Music/假若有一双翅膀.mp3
+File2[$e]=/media/D/document/申请/签证/DS-160表格的填法.mp4
+File3[$e]=/usr/local/MATLAB/R2024a/toolbox/matlab/demos/shuttle.avi
+File4[$e]=$HOME/Documents/temporal-CSF-model/test.avi
+File5[$e]=$HOME/Documents/temporal-CSF-model/uncompressed.avi
+File6[$e]=$HOME/Documents/temporal-CSF-model/cartoon/test2.avi
+File7[$e]=$HOME/Documents/temporal-CSF-model/TED/test.avi
+File8[$e]=$HOME/Documents/temporal-CSF-model/rocket/test.avi
+File9[$e]=$HOME/Music/ElectronNCM/HOYO-MiX - 假若有一双翅膀 If We Had Wings.flac
+Name1[$e]=DS-160表格的填法.mp4
+Name10[$e]=假若有一双翅膀.mp3
+Name2[$e]=DS-160表格的填法.mp4
+Name3[$e]=shuttle.avi
+Name4[$e]=test.avi
+Name5[$e]=uncompressed.avi
+Name6[$e]=test2.avi
+Name7[$e]=test.avi
+Name8[$e]=test.avi
+Name9[$e]=HOYO-MiX - 假若有一双翅膀 If We Had Wings.flac
+TimeFormat=1
+UseSystemBell[$d]
+Volume=1
+XftHintStyle[$d]
+XftSubPixel[$d]
+fixed[$d]
+
+[MainWindow]
+1440x900 screen: XPosition=477
+1440x900 screen: YPosition=237
+2880x1800 screen: Height=710
+2880x1800 screen: Width=657
+2880x1800 screen: XPosition=1111
+2880x1800 screen: YPosition=595
+State=AAAA/wAAAAD9AAAAAAAAApEAAAIMAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+eDP-1=eDP-1
+
+[Phonon::AudioOutput]
+Dragon Player_Volume=1
+
+[file:///home/ethan/.config/QQ/nt_qq_938c3ceb8d0b911f4221b9612a297215/nt_data/Video/2024-01/Ori/4b87306f0229ae3fbc2f3e8062af6a7a.mp4]
+Brightness=0
+Contrast=0
+Date=2024,1,5
+Hue=0
+IsVideo=false
+Position=22978
+Preferred Size=100,30
+Saturation=0
+
+[file:///home/ethan/.config/QQ/nt_qq_938c3ceb8d0b911f4221b9612a297215/nt_data/Video/2024-02/Ori/5bde9b1bb73df90de96dec0d5cf85f00.mp4]
+Brightness=0
+Contrast=0
+Date=2024,2,18
+Hue=0
+IsVideo=false
+Position=9868
+Preferred Size=100,30
+Saturation=0
+
+[file:///home/ethan/.local/share/Kingsoft/office6/oleobject/Ole_1688713563616320_156505600.mp4]
+Brightness=0
+Contrast=0
+Date=2023,7,7
+Hue=0
+IsVideo=false
+Position=1106
+Preferred Size=100,30
+Saturation=0
+
+[file:///home/ethan/Documents/temporal-CSF-model/TED/test.avi]
+Brightness=0
+Contrast=0
+Date=2024,7,23
+Hue=0
+IsVideo=false
+Preferred Size=657,524
+Saturation=0
+
+[file:///home/ethan/Documents/temporal-CSF-model/cartoon/test2.avi]
+AudioChannel=2
+Brightness=0
+Contrast=0
+Date=2024,7,23
+Hue=0
+IsVideo=true
+Position=1486
+Preferred Size=657,524
+Saturation=0
+
+[file:///home/ethan/Documents/temporal-CSF-model/rocket/test.avi]
+Brightness=0
+Contrast=0
+Date=2024,7,23
+Hue=0
+IsVideo=false
+Preferred Size=657,524
+Saturation=0
+
+[file:///home/ethan/Documents/temporal-CSF-model/test.avi]
+Brightness=0
+Contrast=0
+Date=2024,7,23
+Hue=0
+IsVideo=false
+Preferred Size=657,524
+Saturation=0
+
+[file:///home/ethan/Documents/temporal-CSF-model/uncompressed.avi]
+AudioChannel=2
+Brightness=0
+Contrast=0
+Date=2024,7,23
+Hue=0
+IsVideo=true
+Position=130
+Preferred Size=716,763
+Saturation=0
+
+[file:///home/ethan/Downloads/1_source1_(Vocals).wav]
+Brightness=0
+Contrast=0
+Date=2024,2,11
+Hue=0
+IsVideo=false
+Position=1743366
+Preferred Size=100,30
+Saturation=0
+
+[file:///home/ethan/Downloads/DS-160表格的填法.mp4]
+AudioChannel=2
+Brightness=0
+Contrast=0
+Date=2024,5,12
+Hue=0
+IsVideo=true
+Position=1152351
+Preferred Size=716,763
+Saturation=0
+
+[file:///home/ethan/Downloads/SVID_20240214_201552_1.mp4]
+Brightness=0
+Contrast=0
+Date=2024,2,16
+Hue=0
+IsVideo=false
+Position=3837
+Preferred Size=100,30
+Saturation=0
+
+[file:///home/ethan/Downloads/coverd by Firefly vol.2/ñññ─ñΓ║╬╢╚ñ╟ñΓ.mp3]
+Brightness=0
+Contrast=0
+Date=2024,2,13
+Hue=0
+IsVideo=false
+Position=22003
+Preferred Size=100,30
+Saturation=0
+
+[file:///home/ethan/Downloads/coverd by Firefly vol.2/┐╔É█ñ»ñ╞ñ┤ñßñ≤.mp3]
+Brightness=0
+Contrast=0
+Date=2024,2,13
+Hue=0
+IsVideo=false
+Position=16154
+Preferred Size=100,30
+Saturation=0
+
+[file:///home/ethan/Downloads/coverd by Firefly vol.2/║∞╒╤╘╕.mp3]
+Brightness=0
+Contrast=0
+Date=2024,2,13
+Hue=0
+IsVideo=false
+Position=9467
+Preferred Size=100,30
+Saturation=0
+
+[file:///home/ethan/Downloads/coverd by Firefly vol.2/╩╣╥╗┐┼╨─├Γ╙┌░º╔╦.mp3]
+Brightness=0
+Contrast=0
+Date=2024,2,13
+Hue=0
+IsVideo=false
+Position=41736
+Preferred Size=100,30
+Saturation=0
+
+[file:///home/ethan/Downloads/covered by Firefly Vol.5/星间旅行.mp3]
+Brightness=0
+Contrast=0
+Date=2024,2,13
+Hue=0
+IsVideo=false
+Position=43323
+Preferred Size=100,30
+Saturation=0
+
+[file:///home/ethan/Downloads/feat by 流萤/煤前 La vaguelette.mp3]
+Brightness=0
+Contrast=0
+Date=2024,2,13
+Hue=0
+IsVideo=false
+Position=47968
+Preferred Size=100,30
+Saturation=0
+
+[file:///home/ethan/Downloads/mylivewallpapers-com-Furina-Genshin-Impact-FHD.mp4]
+Brightness=0
+Contrast=0
+Date=2024,4,30
+Hue=0
+IsVideo=true
+Position=4301
+Preferred Size=657,524
+Saturation=0
+
+[file:///home/ethan/Downloads/使一颗心免于哀伤.mp3]
+Brightness=0
+Contrast=0
+Date=2024,2,13
+Hue=0
+IsVideo=false
+Position=90201
+Preferred Size=100,30
+Saturation=0
+
+[file:///home/ethan/Music/ElectronNCM/HOYO-MiX - 假若有一双翅膀 If We Had Wings.flac]
+Brightness=0
+Contrast=0
+Date=2024,10,7
+Hue=0
+IsVideo=false
+Position=110530
+Preferred Size=100,30
+Saturation=0
+
+[file:///media/D/Music/假若有一双翅膀.mp3]
+Brightness=0
+Contrast=0
+Date=2024,10,7
+Hue=0
+IsVideo=false
+Preferred Size=100,30
+Saturation=0
+
+[file:///media/D/document/大一下/CET6/四六级真题/2023年03月CET6题+解+音频【新】/2023年03月六级听力全1套.mp3]
+Brightness=0
+Contrast=0
+Date=2023,6,17
+Hue=0
+IsVideo=false
+Position=1194629
+Preferred Size=100,30
+Saturation=0
+
+[file:///media/D/document/大一下/程序设计进阶/演示视频.mp4]
+Brightness=0
+Contrast=0
+Date=2024,2,9
+Hue=0
+IsVideo=false
+Position=4448
+Preferred Size=100,30
+Saturation=0
+
+[file:///media/D/document/大二上/数据结构/lab3/huff/6.MV.mp4]
+Brightness=0
+Contrast=0
+Date=2023,12,20
+Hue=0
+IsVideo=false
+Position=2245
+Preferred Size=100,30
+Saturation=0
+
+[file:///media/D/document/大二上/数据结构/lab3/huff/unzip_6.MV.mp4]
+Brightness=0
+Contrast=0
+Date=2023,12,20
+Hue=0
+IsVideo=false
+Position=2374
+Preferred Size=100,30
+Saturation=0
+
+[file:///media/D/document/申请/签证/DS-160表格的填法.mp4]
+AudioChannel=2
+Brightness=0
+Contrast=0
+Date=2024,6,5
+Hue=0
+IsVideo=false
+Preferred Size=657,524
+Saturation=0
+
+[file:///usr/local/MATLAB/R2024a/toolbox/matlab/demos/shuttle.avi]
+Brightness=0
+Contrast=0
+Date=2024,7,23
+Hue=0
+IsVideo=true
+Preferred Size=657,524
+Saturation=0

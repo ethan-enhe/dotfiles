@@ -1,0 +1,10 @@
+[activities]
+8de60e26-0ff9-4d49-92df-66922aa2d42f=默认
+
+[activities-icons]
+8de60e26-0ff9-4d49-92df-66922aa2d42f=start-here-archlinux
+
+[main]
+currentActivity=8de60e26-0ff9-4d49-92df-66922aa2d42f
+runningActivities=8de60e26-0ff9-4d49-92df-66922aa2d42f
+stoppedActivities=

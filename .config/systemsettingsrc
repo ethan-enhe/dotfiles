@@ -1,0 +1,39 @@
+[FileDialogSize]
+1440x900 screen: Window-Maximized=true
+
+[KFileDialog Settings]
+iconViewIconSize=64
+
+[KPropertiesDialog]
+1440x900 screen: Height=524
+1440x900 screen: Width=420
+eDP-1 Height 1440x900 eDP-1=524
+eDP-1 Width 1440x900 eDP-1=420
+
+[MainWindow]
+1440x900 screen: Height=700
+1440x900 screen: Width=1020
+1440x900 screen: Window-Maximized=true
+1440x900 screen: XPosition=208
+1440x900 screen: YPosition=173
+2 screens: Height=700
+2 screens: Width=1020
+2 screens: XPosition=301
+2 screens: YPosition=153
+2880x1800 screen: Window-Maximized=true
+2880x1800 screen: XPosition=930
+2880x1800 screen: YPosition=600
+HDMI-1 eDP-1=eDP-1
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAA/wAAAK8AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+eDP-1=eDP-1
+eDP-1 Height 1440x900 eDP-1=700
+eDP-1 Width 1440x900 eDP-1=1020
+eDP-1 XPosition 1440x900 eDP-1=210
+eDP-1 XPosition 2880x1800 eDP-1=930
+eDP-1 YPosition 1440x900 eDP-1=125
+eDP-1 YPosition 2880x1800 eDP-1=542
+
+[systemsettings_sidebar_mode]
+HighlightNonDefaultSettings=true

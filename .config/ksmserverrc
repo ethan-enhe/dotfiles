@@ -1,0 +1,62 @@
+[$Version]
+update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_value_default_enum
+
+[General]
+confirmLogout=false
+loginMode=emptySession
+
+[LegacySession: saved at previous logout]
+clientMachine1=localhost
+command1=com.github.xournalpp.xournalpp
+count=1
+
+[LegacySession: saved by user]
+count=0
+
+[Session: saved at previous logout]
+clientId1=10d3746861000171946439000000013380008
+clientId2=10d3746861000167500462900000066300007
+clientId3=10d3746861000167505160100000011180006
+clientId4=10d3746861000167500790300000066300013
+clientId5=10d3746861000171946439000000013380009
+clientId6=10d3746861000171946439000000013380010
+clientId7=10d3746861000171946439000000013380011
+count=7
+discardCommand2[$e]=rm,$HOME/.config/session/konsole_10d3746861000167500462900000066300007_1719464416_35329
+discardCommand3[$e]=rm,$HOME/.config/session/systemsettings_10d3746861000167505160100000011180006_1719464416_35429
+discardCommand4[$e]=rm,$HOME/.config/session/kcalc_10d3746861000167500790300000066300013_1719464416_35385
+discardCommand5[$e]=rm,$HOME/.config/session/yakuake_10d3746861000171946439000000013380009_1719464416_35310
+program1=/usr/lib/DiscoverNotifier
+program2=/usr/bin/konsole
+program3=/usr/bin/systemsettings
+program4=/usr/bin/kcalc
+program5=/usr/bin/yakuake
+program6=/usr/lib/nekoray/nekoray
+program7=fcitx5-plasma-theme-generator
+restartCommand1=/usr/lib/DiscoverNotifier,-session,10d3746861000171946439000000013380008_1719464416_35385
+restartCommand2=/usr/bin/konsole,-session,10d3746861000167500462900000066300007_1719464416_35329
+restartCommand3=/usr/bin/systemsettings,-session,10d3746861000167505160100000011180006_1719464416_35429
+restartCommand4=/usr/bin/kcalc,-session,10d3746861000167500790300000066300013_1719464416_35385
+restartCommand5=/usr/bin/yakuake,-session,10d3746861000171946439000000013380009_1719464416_35310
+restartCommand6=/usr/lib/nekoray/nekoray,-session,10d3746861000171946439000000013380010_1719464416_35385
+restartCommand7=fcitx5-plasma-theme-generator,-session,10d3746861000171946439000000013380011_1719464416_35305
+restartStyleHint1=0
+restartStyleHint2=0
+restartStyleHint3=0
+restartStyleHint4=0
+restartStyleHint5=0
+restartStyleHint6=0
+restartStyleHint7=0
+userId1=ethan
+userId2=ethan
+userId3=ethan
+userId4=ethan
+userId5=ethan
+userId6=ethan
+userId7=ethan
+
+[Session: saved by user]
+count=0
+
+[SubSession: b73fd147-0870-4142-a2c0-e614ded6e8da]
+count=0

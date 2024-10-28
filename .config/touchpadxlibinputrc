@@ -1,0 +1,5 @@
+[ELAN0662:00 04F3:317C Touchpad]
+naturalScroll=true
+pointerAccelerationProfileAdaptive=true
+pointerAccelerationProfileFlat=false
+tapToClick=true
