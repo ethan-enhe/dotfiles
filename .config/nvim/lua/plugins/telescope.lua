@@ -5,10 +5,10 @@ return {
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
       local actions = require("telescope.actions")
-      local open_with_trouble = require("trouble.sources.telescope").open
+      -- local open_with_trouble = require("trouble.sources.telescope").open
 
       -- Use this to add more results without clearing the trouble list
-      local add_to_trouble = require("trouble.sources.telescope").add
+      -- local add_to_trouble = require("trouble.sources.telescope").add
 
       require('telescope').setup {
         defaults = {
@@ -16,9 +16,9 @@ return {
             i = {
               ['<C-u>'] = false,
               ['<C-d>'] = false,
-              ["<c-t>"] = open_with_trouble ,
+              -- ["<c-t>"] = open_with_trouble ,
             },
-            n = { ["<c-t>"] = open_with_trouble },
+            -- n = { ["<c-t>"] = open_with_trouble },
           },
         },
       }
