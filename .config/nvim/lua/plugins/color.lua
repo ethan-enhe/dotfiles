@@ -9,7 +9,8 @@ return {
           mason = true,
           nvim_surround = true,
           which_key = true,
-        }
+        },
+        transparent_background = true,
       })
       vim.cmd.colorscheme "catppuccin"
     end

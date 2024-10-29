@@ -373,7 +373,7 @@ DialogWidth=720
 [Containments][161][Applets][252][Configuration][General]
 highlightWindows=false
 iconSpacing=0
-launchers=preferred://filemanager,applications:systemsettings.desktop,applications:kitty.desktop,applications:betterbird.desktop,applications:brave-browser.desktop,applications:org.kde.plasma-systemmonitor.desktop,applications:neovide.desktop,applications:electron-netease-cloud-music.desktop
+launchers=applications:systemsettings.desktop,preferred://filemanager,applications:kitty.desktop,applications:betterbird.desktop,applications:brave-browser.desktop,applications:com.gitee.gmg137.NeteaseCloudMusicGtk4.desktop,applications:com.github.xournalpp.xournalpp.desktop
 showOnlyCurrentActivity=false
 unhideOnAttention=false
 
@@ -511,21 +511,21 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][167][Applets][182][Configuration]
-PreloadWeight=0
+PreloadWeight=2
 
 [Containments][167][Applets][183]
 immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][167][Applets][183][Configuration]
-PreloadWeight=2
+PreloadWeight=0
 
 [Containments][167][Applets][184]
 immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][167][Applets][184][Configuration]
-PreloadWeight=0
+PreloadWeight=30
 
 [Containments][167][Applets][185]
 immutability=1
@@ -556,7 +556,7 @@ immutability=1
 plugin=org.kde.plasma.wacomtablet
 
 [Containments][167][Applets][254][Configuration]
-PreloadWeight=65
+PreloadWeight=57
 
 [Containments][167][Applets][255]
 immutability=1
@@ -871,6 +871,8 @@ extraItems=org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.clipbo
 knownItems=org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.keyboardindicator,org.kde.kscreen,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.plasma.vault,org.kde.kdeconnect,org.kde.plasma.brightness,org.kde.plasma.cameraindicator,org.kde.plasma.printmanager
 
 [Containments][261]
+ItemGeometries-1440x900=
+ItemGeometriesHorizontal=
 activityId=8de60e26-0ff9-4d49-92df-66922aa2d42f
 formfactor=0
 immutability=1

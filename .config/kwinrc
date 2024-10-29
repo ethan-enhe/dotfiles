@@ -71,7 +71,12 @@ applications=org.kde.yakuake
 
 [Script-krohnkite]
 debugActiveWin=true
-floatingClass=electron-netease-cloud-music,dolphin,QQ,wechat,systemsettings,Qcm,clash-verge,org.kde.plasma-systemmonitor,zoom,wemeetapp
+enableColumnsLayout=false
+enableSpiralLayout=false
+enableSpreadLayout=false
+enableStairLayout=false
+enableThreeColumnLayout=false
+floatingClass=netease-cloud-music-gtk4,electron-netease-cloud-music,dolphin,QQ,wechat,systemsettings,Qcm,clash-verge,org.kde.plasma-systemmonitor,zoom,wemeetapp
 ignoreClass=org.kde.kdesu,krunner,yakuake,spectacle,kded5,xwaylandvideobridge,plasmashell,ksplashqml,org.kde.plasmashell,org.kde.polkit-kde-authentication-agent-1,org.kde.kruler
 noTileBorder=true
 screenGapBottom=5
@@ -139,7 +144,7 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Wayland]
-InputMethod[$e]=/usr/share/applications/fcitx5-wayland-launcher.desktop
+InputMethod[$e]=/usr/share/applications/org.fcitx.Fcitx5.desktop
 VirtualKeyboardEnabled=true
 
 [Windows]

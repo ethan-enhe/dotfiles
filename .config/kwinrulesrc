@@ -19,8 +19,18 @@ wmclasscomplete=true
 wmclassmatch=1
 
 [General]
-count=4
-rules=75ed9d8e-7d4a-4614-b19d-22cd22ceee0a,fb008756-3781-4f6f-8818-0417660afff1,45d935d5-6f8d-4dfc-8e3d-bbe8ea01e793,f5dac6e1-eb90-41ad-9db8-4acad86d2054
+count=5
+rules=75ed9d8e-7d4a-4614-b19d-22cd22ceee0a,fb008756-3781-4f6f-8818-0417660afff1,45d935d5-6f8d-4dfc-8e3d-bbe8ea01e793,f5dac6e1-eb90-41ad-9db8-4acad86d2054,f5ab4f56-d5f2-4de5-9b93-22c9255939e6
+
+[f5ab4f56-d5f2-4de5-9b93-22c9255939e6]
+Description=Kitty Dropdown
+noborder=true
+noborderrule=2
+position=0,0
+positionrule=2
+sizerule=2
+wmclass=kitty-dropdown
+wmclassmatch=1
 
 [f5dac6e1-eb90-41ad-9db8-4acad86d2054]
 Description=Prevent borders and shadows from disappearing
