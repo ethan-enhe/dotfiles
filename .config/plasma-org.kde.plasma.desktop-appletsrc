@@ -373,7 +373,7 @@ DialogWidth=720
 [Containments][161][Applets][252][Configuration][General]
 highlightWindows=false
 iconSpacing=0
-launchers=applications:systemsettings.desktop,preferred://filemanager,applications:kitty.desktop,applications:betterbird.desktop,applications:brave-browser.desktop,applications:com.gitee.gmg137.NeteaseCloudMusicGtk4.desktop,applications:com.github.xournalpp.xournalpp.desktop
+launchers=applications:systemsettings.desktop,preferred://filemanager,applications:kitty.desktop,applications:betterbird.desktop,applications:brave-browser.desktop,applications:com.github.xournalpp.xournalpp.desktop,applications:spotify.desktop
 showOnlyCurrentActivity=false
 unhideOnAttention=false
 
@@ -511,7 +511,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][167][Applets][182][Configuration]
-PreloadWeight=2
+PreloadWeight=0
 
 [Containments][167][Applets][183]
 immutability=1
@@ -525,14 +525,14 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][167][Applets][184][Configuration]
-PreloadWeight=30
+PreloadWeight=44
 
 [Containments][167][Applets][185]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][167][Applets][185][Configuration]
-PreloadWeight=100
+PreloadWeight=88
 
 [Containments][167][Applets][186]
 immutability=1
@@ -556,7 +556,7 @@ immutability=1
 plugin=org.kde.plasma.wacomtablet
 
 [Containments][167][Applets][254][Configuration]
-PreloadWeight=57
+PreloadWeight=41
 
 [Containments][167][Applets][255]
 immutability=1

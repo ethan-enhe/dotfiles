@@ -43,26 +43,26 @@ eDP-1 YPosition 1440x900 eDP-1=53
 PrintHeight=21.23
 
 [Recent Files]
-File1[$e]=/media/D/document/24fall/Network/Labs/周翟恩和_PB22000008_EXDNS/屏幕截图_20241009_085046.png
-File10[$e]=$HOME/微信图片_20241022143338.jpg
-File2[$e]=/media/D/document/24fall/operations_research/2024-09-30_11-09.png
-File3[$e]=/media/D/Music/吉他/枫丹&罪人的终幕/Sinner's Finale-1.png
-File4[$e]=/usr/share/sddm/themes/where_is_my_sddm_theme/img.jpg
-File5[$e]=/usr/share/sddm/themes/where_is_my_sddm_theme/screenshot.png
-File6[$e]=$HOME/Pictures/壁纸/furina/D66BABCDB4432B852BC2547AEC478447.jpg
-File7[$e]=$HOME/Documents/where-is-my-sddm-theme/where_is_my_sddm_theme/example_configs/tree.png
-File8[$e]=$HOME/Pictures/壁纸/furina/Furina5.jpg
-File9[$e]=/media/D/document/24fall/Compile/hw3/1.jpg
-Name1[$e]=屏幕截图_20241009_085046.png
-Name10[$e]=微信图片_20241022143338.jpg
-Name2[$e]=2024-09-30_11-09.png
-Name3[$e]=Sinner's Finale-1.png
-Name4[$e]=img.jpg
-Name5[$e]=screenshot.png
-Name6[$e]=D66BABCDB4432B852BC2547AEC478447.jpg
-Name7[$e]=tree.png
-Name8[$e]=Furina5.jpg
-Name9[$e]=1.jpg
+File1[$e]=/usr/share/sddm/themes/where_is_my_sddm_theme/screenshot.png
+File10[$e]=/media/D/document/24fall/XCPC/haerbin/1730376868396.jpg
+File2[$e]=$HOME/Pictures/壁纸/furina/D66BABCDB4432B852BC2547AEC478447.jpg
+File3[$e]=$HOME/Documents/where-is-my-sddm-theme/where_is_my_sddm_theme/example_configs/tree.png
+File4[$e]=$HOME/Pictures/壁纸/furina/Furina5.jpg
+File5[$e]=/media/D/document/24fall/Compile/hw3/1.jpg
+File6[$e]=$HOME/微信图片_20241022143338.jpg
+File7[$e]=$HOME/.config/go-musicfox/qrcode.png
+File8[$e]=/media/D/document/24fall/Comb/2024-10-28-笔记-22-01_已注解-1.png
+File9[$e]=/media/D/document/24fall/XCPC/haerbin/1729941487895.jpg
+Name1[$e]=screenshot.png
+Name10[$e]=1730376868396.jpg
+Name2[$e]=D66BABCDB4432B852BC2547AEC478447.jpg
+Name3[$e]=tree.png
+Name4[$e]=Furina5.jpg
+Name5[$e]=1.jpg
+Name6[$e]=微信图片_20241022143338.jpg
+Name7[$e]=qrcode.png
+Name8[$e]=2024-10-28-笔记-22-01_已注解-1.png
+Name9[$e]=1729941487895.jpg
 
 [SideBar]
 InformationSplitterSizes=232,243

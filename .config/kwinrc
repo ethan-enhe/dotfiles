@@ -16,7 +16,7 @@ Number=4
 Rows=1
 
 [Effect-blurplus]
-BlurStrength=10
+BlurStrength=9
 BottomCornerRadius=10
 DockCornerRadius=10
 MenuCornerRadius=10
@@ -76,7 +76,7 @@ enableSpiralLayout=false
 enableSpreadLayout=false
 enableStairLayout=false
 enableThreeColumnLayout=false
-floatingClass=netease-cloud-music-gtk4,electron-netease-cloud-music,dolphin,QQ,wechat,systemsettings,Qcm,clash-verge,org.kde.plasma-systemmonitor,zoom,wemeetapp
+floatingClass=spotify,netease-cloud-music,music.163.com,qqmusic,netease-cloud-music-gtk4,electron-netease-cloud-music,dolphin,QQ,wechat,systemsettings,Qcm,clash-verge,org.kde.plasma-systemmonitor,zoom,wemeetapp
 ignoreClass=org.kde.kdesu,krunner,yakuake,spectacle,kded5,xwaylandvideobridge,plasmashell,ksplashqml,org.kde.plasmashell,org.kde.polkit-kde-authentication-agent-1,org.kde.kruler
 noTileBorder=true
 screenGapBottom=5

@@ -6,6 +6,14 @@ Description=Minimum Geometry Size
 minsizerule=2
 types=1
 
+[4d53c514-eee6-405d-8a9f-653da4f87060]
+Description=qqmusic 的应用程序设置
+clientmachine=localhost
+size=1000,700
+sizerule=3
+wmclass=qqmusic
+wmclassmatch=1
+
 [75ed9d8e-7d4a-4614-b19d-22cd22ceee0a]
 Description=io.github.hypengw.Qcm 的窗口设置
 opacityactive=80
@@ -19,17 +27,20 @@ wmclasscomplete=true
 wmclassmatch=1
 
 [General]
-count=5
-rules=75ed9d8e-7d4a-4614-b19d-22cd22ceee0a,fb008756-3781-4f6f-8818-0417660afff1,45d935d5-6f8d-4dfc-8e3d-bbe8ea01e793,f5dac6e1-eb90-41ad-9db8-4acad86d2054,f5ab4f56-d5f2-4de5-9b93-22c9255939e6
+count=6
+rules=d1b1afc1-5f8d-480e-80a4-28e0be4fcd66,4d53c514-eee6-405d-8a9f-653da4f87060,75ed9d8e-7d4a-4614-b19d-22cd22ceee0a,fb008756-3781-4f6f-8818-0417660afff1,45d935d5-6f8d-4dfc-8e3d-bbe8ea01e793,f5dac6e1-eb90-41ad-9db8-4acad86d2054
 
-[f5ab4f56-d5f2-4de5-9b93-22c9255939e6]
-Description=Kitty Dropdown
+[d1b1afc1-5f8d-480e-80a4-28e0be4fcd66]
+Description=Brave-browser 的窗口设置
+clientmachine=localhost
 noborder=true
 noborderrule=2
-position=0,0
-positionrule=2
-sizerule=2
-wmclass=kitty-dropdown
+title=▶ 花与梦的祝诞 Dance of Sabzeruz
+types=1
+windowrole=pop-up
+windowrolematch=1
+wmclass=music.163.com Brave-browser
+wmclasscomplete=true
 wmclassmatch=1
 
 [f5dac6e1-eb90-41ad-9db8-4acad86d2054]
