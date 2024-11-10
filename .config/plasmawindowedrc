@@ -1,7 +1,0 @@
-[Applets][3]
-immutability=1
-plugin=org.kde.plasma.mediacontroller
-
-[Applets][3][Configuration]
-PreloadWeight=42
-geometry=640,396,253,252

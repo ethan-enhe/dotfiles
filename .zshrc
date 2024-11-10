@@ -50,3 +50,4 @@ alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 export GEM_HOME=$HOME/gems
 export PATH=$HOME/gems/bin:$PATH
 export GTK_USE_PORTAL=1
+export PATH=$PATH:/opt/cross-tools.gcc_glibc/bin:/opt/gdb/bin:/opt/qemu/bin
