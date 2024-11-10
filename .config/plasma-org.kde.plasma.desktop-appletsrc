@@ -1,6 +1,24 @@
 [ActionPlugins][0]
 RightButton;NoModifier=org.kde.contextmenu
-wheel:Vertical;NoModifier=org.kde.switchdesktop
+
+[ActionPlugins][0][RightButton;NoModifier]
+_add panel=false
+_context=true
+_display_settings=true
+_lock_screen=false
+_logout=false
+_open_terminal=false
+_run_command=false
+_sep1=true
+_sep2=true
+_sep3=true
+_wallpaper=true
+add widgets=false
+configure=true
+configure shortcuts=false
+desktop edit mode=true
+manage activities=true
+remove=true
 
 [ActionPlugins][1]
 RightButton;NoModifier=org.kde.contextmenu
@@ -373,7 +391,7 @@ DialogWidth=720
 [Containments][161][Applets][252][Configuration][General]
 highlightWindows=false
 iconSpacing=0
-launchers=applications:systemsettings.desktop,preferred://filemanager,applications:kitty.desktop,applications:betterbird.desktop,applications:brave-browser.desktop,applications:com.github.xournalpp.xournalpp.desktop,applications:spotify.desktop
+launchers=applications:systemsettings.desktop,preferred://filemanager,applications:kitty.desktop,applications:betterbird.desktop,applications:brave-browser.desktop,applications:com.github.xournalpp.xournalpp.desktop,applications:spotify.desktop,applications:netease-cloud-music.desktop
 showOnlyCurrentActivity=false
 unhideOnAttention=false
 
@@ -511,7 +529,10 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][167][Applets][182][Configuration]
-PreloadWeight=0
+PreloadWeight=2
+
+[Containments][167][Applets][182][Configuration][General]
+showPercentage=true
 
 [Containments][167][Applets][183]
 immutability=1
@@ -525,14 +546,14 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][167][Applets][184][Configuration]
-PreloadWeight=44
+PreloadWeight=0
 
 [Containments][167][Applets][185]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][167][Applets][185][Configuration]
-PreloadWeight=88
+PreloadWeight=100
 
 [Containments][167][Applets][186]
 immutability=1
@@ -556,7 +577,7 @@ immutability=1
 plugin=org.kde.plasma.wacomtablet
 
 [Containments][167][Applets][254][Configuration]
-PreloadWeight=41
+PreloadWeight=1
 
 [Containments][167][Applets][255]
 immutability=1
@@ -903,7 +924,6 @@ VideoUrls=file:///home/ethan/Pictures/壁纸/mylivewallpapers-com-Furina-Genshin
 
 [Containments][261][Wallpaper][org.kde.image][General]
 Image=/home/ethan/Pictures/壁纸/furina/1353124.jpeg
-PreviewImage=/home/ethan/Pictures/壁纸/furina/1353124.jpeg
 SlidePaths=/home/ethan/.local/share/wallpapers/,/usr/share/wallpapers/
 
 [Containments][261][Wallpaper][org.kde.potd][General]

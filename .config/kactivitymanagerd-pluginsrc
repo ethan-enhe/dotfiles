@@ -1,5 +1,4 @@
 [Plugin-org.kde.ActivityManager.Resources.Scoring]
-keep-history-for=1
 off-the-record-activities=
 
 [Plugin-org.kde.ActivityManager.VirtualDesktopSwitch]

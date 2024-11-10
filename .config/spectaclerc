@@ -2,7 +2,7 @@
 update_info=spectacle_clipboard.upd:clipboard-settings-change,spectacle_rememberregion.upd:spectacle-migrate-rememberregion
 
 [Annotations]
-annotationToolType=3
+annotationToolType=2
 freehandShadow=false
 highlighterStrokeColor=255,255,127
 
@@ -11,8 +11,8 @@ captureMode=5
 window-position=52,17
 
 [ImageSave]
-lastImageSaveAsLocation=file:///media/D/document/24fall/Network/Labs/周翟恩和_PB22000008_EX_TCP/13_2.png
-lastImageSaveLocation=file:///media/D/document/24fall/Network/Labs/周翟恩和_PB22000008_EX_TCP/13_2.png
+lastImageSaveAsLocation=file:///media/D/document/24fall/Compile/hw4/1.png
+lastImageSaveLocation=file:///media/D/document/24fall/Compile/hw4/1.png
 translatedScreenshotsFolder=屏幕截图
 
 [VideoSave]

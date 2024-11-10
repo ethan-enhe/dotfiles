@@ -83,7 +83,7 @@ local on_attach = function(_, bufnr)
 end
 
 -- Enable the following language servers
-local servers = { 'clangd','texlab'}
+local servers = { 'clangd','texlab','lua_ls'}
 return {
   {'neovim/nvim-lspconfig',
     config = function()

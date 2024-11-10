@@ -7,6 +7,9 @@ Seen=true
 [Applications][firefox]
 Seen=true
 
+[Applications][org.gnome.Rhythmbox3]
+Seen=true
+
 [Applications][qq]
 Seen=true
 

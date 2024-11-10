@@ -16,11 +16,11 @@ Number=4
 Rows=1
 
 [Effect-blurplus]
-BlurStrength=9
-BottomCornerRadius=10
-DockCornerRadius=10
-MenuCornerRadius=10
-TopCornerRadius=10
+BlurStrength=5
+BottomCornerRadius=6
+DockCornerRadius=6
+MenuCornerRadius=6
+TopCornerRadius=6
 WindowClasses=neovide\nQcm
 
 [Effect-overview]
@@ -58,19 +58,20 @@ shakecursorEnabled=false
 squash2Enabled=false
 
 [PrimaryOutline]
-ActiveOutlinePalette=14
-ActiveOutlineUseCustom=false
-ActiveOutlineUsePalette=true
+ActiveOutlinePalette=13
 InactiveOutlineAlpha=0
-InactiveOutlineThickness=0
-OutlineColor=0,170,255
-OutlineThickness=4
+InactiveOutlineThickness=0.75
+OutlineColor=35,147,239
+OutlineThickness=3
+
+[Round-Corners]
+InactiveCornerRadius=6
+Size=6
 
 [Script-center-new-windows]
 applications=org.kde.yakuake
 
 [Script-krohnkite]
-debugActiveWin=true
 enableColumnsLayout=false
 enableSpiralLayout=false
 enableSpreadLayout=false
@@ -99,6 +100,7 @@ SecondOutlineThickness=0
 [Shadow]
 ActiveShadowAlpha=0
 InactiveShadowAlpha=0
+InactiveShadowPalette=12
 
 [TabBox]
 ActivitiesMode=0
