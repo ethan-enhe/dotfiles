@@ -5,10 +5,17 @@ return {
       size = 10,
       open_mapping = "<f12>",
       shade_terminals = false,
+      autochdir = true,
       -- direction = "float",
       -- float_opts = {
       --   border = "curved"
       -- }
+      -- winbar = {
+      --   -- enabled = true,
+      --   -- name_formatter = function(term) --  term: Terminal
+      --   --   return term.name
+      --   -- end
+      -- },
     })
 
     function _G.set_terminal_keymaps()

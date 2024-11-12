@@ -30,14 +30,31 @@ vim.keymap.set('n', '<leader>w', '<cmd>w!<cr>', { silent = true, desc = "Save fi
 vim.keymap.set('n', '<leader>s', '<cmd>source %<cr>', { silent = true, desc = "Source current file" })
 
 -- Change directory to the current file's directory and print the working directory
-vim.keymap.set('n', '<leader>cd', '<cmd>cd %:p:h<cr><cmd>pwd<cr>', { silent = true, desc = "Change to file's directory and print working directory" })
+vim.keymap.set('n', '<leader>cd', function()
+  local cwd = vim.fn.expand("%:p:h")
+  vim.cmd("cd " .. cwd)
+  print("Changed directory to: " .. cwd)
+end, { silent = true, desc = "Change to file's directory and print working directory" })
+vim.keymap.set('n', '<leader>yd', function()
+  local cwd = vim.fn.expand("%:p:h")
+  vim.fn.setreg('+', cwd)
+  print('Current file directory yanked: ' .. cwd)
+end, { silent = true, desc = "Yank current file directory" })
+vim.keymap.set('n', '<leader>yf', function()
+  local full_fn = vim.fn.getcwd() .. "/" .. vim.fn.expand("%")
+  vim.fn.setreg('+', cwd)
+  print('Current file name yanked: ' .. full_fn)
+end, { silent = true, desc = "Yank current file name (with full path)" })
 
 -- Edit the Neovim configuration file
-vim.keymap.set('n', '<leader>cf', '<cmd>e $MYVIMRC<cr><cmd>cd %:p:h<cr>', { silent = true, desc = "Edit Neovim configuration file" })
+vim.keymap.set('n', '<leader>cf', '<cmd>e $MYVIMRC<cr><cmd>cd %:p:h<cr>',
+  { silent = true, desc = "Edit Neovim configuration file" })
 
 -- Insert template code
-vim.keymap.set('n', '<leader>tt', '<cmd>0 r ~/Documents/mycode/template/other/cf.cpp<cr>', { silent = true, desc = "Insert template code" })
-vim.keymap.set('n', '<leader>tr', ':r ~/Documents/mycode/template/', { silent = true, desc = "Insert template code from directory" })
+vim.keymap.set('n', '<leader>tt', '<cmd>0 r ~/Documents/mycode/template/other/cf.cpp<cr>',
+  { silent = true, desc = "Insert template code" })
+vim.keymap.set('n', '<leader>tr', ':r ~/Documents/mycode/template/',
+  { silent = true, desc = "Insert template code from directory" })
 
 -- Remap 0 to go to the first non-blank character of the line
 vim.keymap.set('n', '0', '^', { desc = "Go to first non-blank character of the line" })
@@ -47,7 +64,7 @@ vim.keymap.set('x', '0', '^', { desc = "Go to first non-blank character of the l
 vim.keymap.set('n', '<leader>bd', function()
   local current_buffer = vim.fn.bufnr("%")
   local alternate_buffer = vim.fn.bufnr("#")
-  
+
   if vim.fn.buflisted(alternate_buffer) then
     vim.cmd("buffer #")
   else

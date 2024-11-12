@@ -25,6 +25,7 @@ return {
     config=function()
       require('copilot').setup({
         suggestion = {
+          enable = true,
           auto_trigger = true,
           hide_during_completion = false,
           debounce = 75,
@@ -40,6 +41,7 @@ return {
         filetypes = {
           markdown = true,
           lua = true,
+          help = true,
         },
       })
     end,
@@ -60,7 +62,7 @@ return {
       prompts = prompts,
       auto_follow_cursor = false, -- Don't follow the cursor after getting response
       -- show_help = true, -- Show help in virtual text, set to true if that's 1st time using Copilot Chat
-      context= 'buffers',
+      -- context= 'buffers',
       window = {
         width = 0.3, -- fractional height of parent, or absolute height in rows when > 1
       },

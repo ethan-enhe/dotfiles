@@ -33,9 +33,10 @@ compinit
 
 # source ~/.bashrc
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-source /usr/share/autojump/autojump.zsh
+# source /usr/share/autojump/autojump.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+eval "$(lua /usr/share/z.lua/z.lua --init zsh enhanced once echo fzf)"
 
 
 
@@ -44,6 +45,7 @@ alias ls='ls --color=auto --hyperlink=auto'
 alias icat="kitten icat"
 alias config='/usr/bin/git --git-dir=$HOME/Documents/dotfiles --work-tree=$HOME'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias zb='z -b'
 
 
 # Install Ruby Gems to ~/gems

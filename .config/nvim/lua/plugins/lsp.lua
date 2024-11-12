@@ -21,7 +21,7 @@ vim.keymap.set('n', '<f8>', function()
   -- vim.cmd("wincmd w")
 end, { silent = true })
 vim.keymap.set('n', '<leader><f8>', function()
-  local filename = vim.fn.expand("%:p:r") .. ".exe" .. " < " ..vim.fn.expand("%:p:h") .. "/test.in"
+  local filename = vim.fn.expand("%:p:r") .. ".exe" .. " < " .. vim.fn.expand("%:p:h") .. "/test.in"
   vim.cmd("TermExec cmd=\"time " .. filename .. "\"")
   -- vim.cmd("wincmd w")
 end, { silent = true })
@@ -83,9 +83,10 @@ local on_attach = function(_, bufnr)
 end
 
 -- Enable the following language servers
-local servers = { 'clangd','texlab','lua_ls'}
+local servers = { 'clangd', 'texlab', 'lua_ls' }
 return {
-  {'neovim/nvim-lspconfig',
+  {
+    'neovim/nvim-lspconfig',
     config = function()
       -- nvim-cmp supports additional completion capabilities
       local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -97,14 +98,16 @@ return {
       end
     end
   }, -- Collection of configurations for built-in LSP client
-  {'williamboman/mason.nvim',
+  {
+    'williamboman/mason.nvim',
     config = function()
       -- Setup mason so it can manage external tooling
       require('mason').setup({
       })
     end
   }, -- Manage external editor tooling i.e LSP servers
-  {'williamboman/mason-lspconfig.nvim',
+  {
+    'williamboman/mason-lspconfig.nvim',
     config = function()
       -- Ensure the servers above are installed
       require('mason-lspconfig').setup {
