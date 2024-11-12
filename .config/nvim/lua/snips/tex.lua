@@ -11,147 +11,147 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
 local get_visual = function(args, parent)
-  if (#parent.snippet.env.LS_SELECT_RAW > 0) then
-    return sn(nil, i(1, parent.snippet.env.LS_SELECT_RAW))
-  else  -- If LS_SELECT_RAW is empty, return a blank insert node
-    return sn(nil, i(1))
-  end
+    if (#parent.snippet.env.LS_SELECT_RAW > 0) then
+        return sn(nil, i(1, parent.snippet.env.LS_SELECT_RAW))
+    else -- If LS_SELECT_RAW is empty, return a blank insert node
+        return sn(nil, i(1))
+    end
 end
 local tex_utils = {}
-tex_utils.in_mathzone = function()  -- math context detection
-  return vim.fn['vimtex#syntax#in_mathzone']() == 1
+tex_utils.in_mathzone = function() -- math context detection
+    return vim.fn['vimtex#syntax#in_mathzone']() == 1
 end
 tex_utils.in_text = function()
-  return not tex_utils.tex_utils.in_mathzone()
+    return not tex_utils.tex_utils.in_mathzone()
 end
-tex_utils.in_comment = function()  -- comment detection
-  return vim.fn['vimtex#syntax#in_comment']() == 1
+tex_utils.in_comment = function() -- comment detection
+    return vim.fn['vimtex#syntax#in_comment']() == 1
 end
-tex_utils.in_env = function(name)  -- generic environment detection
-  local is_inside = vim.fn['vimtex#env#is_inside'](name)
-  return (is_inside[1] > 0 and is_inside[2] > 0)
+tex_utils.in_env = function(name) -- generic environment detection
+    local is_inside = vim.fn['vimtex#env#is_inside'](name)
+    return (is_inside[1] > 0 and is_inside[2] > 0)
 end
 -- A few concrete environments---adapt as needed
-tex_utils.in_equation = function()  -- equation environment detection
-  return tex_utils.in_env('equation')
+tex_utils.in_equation = function() -- equation environment detection
+    return tex_utils.in_env('equation')
 end
-tex_utils.in_itemize = function()  -- itemize environment detection
-  return tex_utils.in_env('itemize')
+tex_utils.in_itemize = function() -- itemize environment detection
+    return tex_utils.in_env('itemize')
 end
-tex_utils.in_tikz = function()  -- TikZ picture environment detection
-  return tex_utils.in_env('tikzpicture')
+tex_utils.in_tikz = function() -- TikZ picture environment detection
+    return tex_utils.in_env('tikzpicture')
 end
 
 return {
-  -- Example: italic font implementing visual selection
-  s({
-    trig="ti",
-    -- snippetType="autosnippet",
-    priority=99
-  },
-    fmta("\\textit{<>}",
-      {
-        d(1, get_visual),
-      })
-  ),
-  s({
-    trig="tt",
-    -- snippetType="autosnippet",
-    priority=99
-  },
-    fmta("\\texttt{<>}",
-      {
-        d(1, get_visual),
-      })
-  ),
-  s({
-    trig="mr",
-    snippetType="autosnippet",
-    priority=99
-  },
-    fmta("\\mathrm{<>}",
-      {
-        d(1, get_visual),
-      }),
-    {condition=tex_utils.in_mathzone}
-  ),
-  s({
-    trig="mb",
-    snippetType="autosnippet",
-    priority=99
-  },
-    fmta("\\mathbf{<>}",
-      {
-        d(1, get_visual),
-      }),
-    {condition=tex_utils.in_mathzone}
-  ),
-  s({
-    trig="dx",
-    snippetType="autosnippet",
-    priority=99
-  },
-    fmta("\\mathrm{d}<>",
-      {
-        d(1, get_visual),
-      }),
-    {condition=tex_utils.in_mathzone}
-  ),
-  s({
-    trig="tb",
-    -- snippetType="autosnippet",
-    priority=99
-  },
-    fmta("\\textbf{<>}",
-      {
-        d(1, get_visual),
-      })
-  ),
-  s({
-    trig="sec",
-    -- snippetType="autosnippet",
-    priority=99
-  },
-    fmta([[
+    -- Example: italic font implementing visual selection
+    s({
+            trig = "ti",
+            -- snippetType="autosnippet",
+            priority = 99
+        },
+        fmta("\\textit{<>}",
+            {
+                d(1, get_visual),
+            })
+    ),
+    s({
+            trig = "tt",
+            -- snippetType="autosnippet",
+            priority = 99
+        },
+        fmta("\\texttt{<>}",
+            {
+                d(1, get_visual),
+            })
+    ),
+    s({
+            trig = "mr",
+            snippetType = "autosnippet",
+            priority = 99
+        },
+        fmta("\\mathrm{<>}",
+            {
+                d(1, get_visual),
+            }),
+        { condition = tex_utils.in_mathzone }
+    ),
+    s({
+            trig = "mb",
+            snippetType = "autosnippet",
+            priority = 99
+        },
+        fmta("\\mathbf{<>}",
+            {
+                d(1, get_visual),
+            }),
+        { condition = tex_utils.in_mathzone }
+    ),
+    s({
+            trig = "dx",
+            snippetType = "autosnippet",
+            priority = 99
+        },
+        fmta("\\mathrm{d}<>",
+            {
+                d(1, get_visual),
+            }),
+        { condition = tex_utils.in_mathzone }
+    ),
+    s({
+            trig = "tb",
+            -- snippetType="autosnippet",
+            priority = 99
+        },
+        fmta("\\textbf{<>}",
+            {
+                d(1, get_visual),
+            })
+    ),
+    s({
+            trig = "sec",
+            -- snippetType="autosnippet",
+            priority = 99
+        },
+        fmta([[
     \section*{<>}
     ]],
-      {
-        i(1),
-      })
-  ),
-  s({
-    trig="ssec",
-    -- snippetType="autosnippet",
-    priority=99
-  },
-    fmta([[
+            {
+                i(1),
+            })
+    ),
+    s({
+            trig = "ssec",
+            -- snippetType="autosnippet",
+            priority = 99
+        },
+        fmta([[
     \subsection*{<>}
     ]],
-      {
-        i(1),
-      })
-  ),
-  s({
-    trig="ff",
-    -- snippetType="autosnippet",
-    priority=99
-  },
-    fmta([[
+            {
+                i(1),
+            })
+    ),
+    s({
+            trig = "ff",
+            -- snippetType="autosnippet",
+            priority = 99
+        },
+        fmta([[
 \begin{figure}[H]
-\centering 
-\includegraphics[width=0.8\textwidth]{<>} 
-\caption{<>} 
-\label{<>} 
+\centering
+\includegraphics[width=0.8\textwidth]{<>}
+\caption{<>}
+\label{<>}
 \end{figure}
-  ]],{
-        i(1),i(2),i(3)}
-    )
-  ),
-  s({
-    trig="tpl",
-    snippetType="autosnippet",
-    priority=99
-  },fmta([[
+  ]], {
+            i(1), i(2), i(3) }
+        )
+    ),
+    s({
+        trig = "tpl",
+        snippetType = "autosnippet",
+        priority = 99
+    }, fmta([[
 \documentclass[UTF8, 12pt]{ctexart} % 设置默认字体大小为 12pt
 
 % 使用更适合论文的数学包和字体设置
@@ -232,5 +232,5 @@ return {
 \maketitle
 <>
 \end{document}
-  ]],{i(1),i(0)}))
+  ]], { i(1), i(0) }))
 }
