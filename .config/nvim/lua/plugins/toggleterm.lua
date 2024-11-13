@@ -2,20 +2,16 @@ return {
     'akinsho/toggleterm.nvim',
     config = function()
         require("toggleterm").setup({
-            size = 10,
+            size = function(term)
+                if term.direction == "horizontal" then
+                    return 15
+                elseif term.direction == "vertical" then
+                    return vim.o.columns * 0.4
+                end
+            end,
             open_mapping = "<f12>",
             shade_terminals = false,
             autochdir = true,
-            -- direction = "float",
-            -- float_opts = {
-            --   border = "curved"
-            -- }
-            -- winbar = {
-            --   -- enabled = true,
-            --   -- name_formatter = function(term) --  term: Terminal
-            --   --   return term.name
-            --   -- end
-            -- },
         })
 
         function _G.set_terminal_keymaps()
@@ -31,6 +27,20 @@ return {
         end
 
         -- if you only want these mappings for toggle term use term://*toggleterm#* instead
-        vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+        vim.api.nvim_create_autocmd("TermOpen", {
+            pattern = "term://*",
+            callback = function()
+                set_terminal_keymaps()
+                vim.cmd([[setlocal nospell]])
+            end,
+            desc = "Mappings for navigation with a terminal",
+        })
+        vim.api.nvim_create_user_command("Exec", function(opts)
+            require("toggleterm").exec(opts.args)
+        end, { desc = "Run TermExec with the given command", nargs = "*" })
+
+        vim.api.nvim_create_user_command("Tldr", function(opts)
+            require("toggleterm").exec("tldr " .. opts.args)
+        end, { desc = "Run tldr with the given argument", nargs = 1 })
     end
 }
