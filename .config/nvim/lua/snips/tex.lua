@@ -87,6 +87,17 @@ return {
         { condition = tex_utils.in_mathzone }
     ),
     s({
+            trig = "opn",
+            snippetType = "autosnippet",
+            priority = 99
+        },
+        fmta("\\operatorname{<>}",
+            {
+                d(1, get_visual),
+            }),
+        { condition = tex_utils.in_mathzone }
+    ),
+    s({
             trig = "dx",
             snippetType = "autosnippet",
             priority = 99
