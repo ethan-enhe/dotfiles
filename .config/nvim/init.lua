@@ -12,7 +12,6 @@ end
 
 -- Get the path to the user configuration directory
 local user_config_path = vim.fn.stdpath("config") .. "/lua/user"
-
 -- Iterate through all .lua files in the user configuration directory
 for _, file in ipairs(vim.fn.readdir(user_config_path)) do
     if file:match("%.lua$") then
