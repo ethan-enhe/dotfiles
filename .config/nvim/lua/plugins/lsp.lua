@@ -94,6 +94,13 @@ return {
                 require('lspconfig')[lsp].setup {
                     on_attach = on_attach,
                     capabilities = capabilities,
+                    settings = {
+                        Lua = {
+                            diagnostics = {
+                                globals = { 'vim' }
+                            }
+                        }
+                    }
                 }
             end
         end
