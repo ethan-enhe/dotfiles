@@ -56,16 +56,15 @@ return {
             { "nvim-lua/plenary.nvim" },
         },
         opts = {
-            question_header = "## User ",
-            answer_header = "## Copilot ",
-            error_header = "## Error ",
+            auto_insert_mode = true,
+            question_header = "  " .. "Ethan" .. " ",
+            answer_header = "  Copilot ",
+            window = {
+                width = 0.4,
+            },
             prompts = prompts,
             auto_follow_cursor = false, -- Don't follow the cursor after getting response
             -- show_help = true, -- Show help in virtual text, set to true if that's 1st time using Copilot Chat
-            -- context= 'buffers',
-            window = {
-                width = 0.3, -- fractional height of parent, or absolute height in rows when > 1
-            },
             mappings = {
                 -- Use tab for completion
                 complete = {
@@ -118,7 +117,7 @@ return {
             local chat = require("CopilotChat")
             local select = require("CopilotChat.select")
             -- Use unnamed register for the selection
-            opts.selection = select.unnamed
+            opts.selection = select.unnamedplus
 
             -- Override the git prompts message
             opts.prompts.Commit = {
@@ -133,13 +132,19 @@ return {
             }
 
             chat.setup(opts)
-            -- Setup the CMP integration
-            require("CopilotChat.integrations.cmp").setup()
 
             vim.api.nvim_create_user_command("CopilotChatVisual", function(args)
                 chat.ask(args.args, { selection = select.visual })
             end, { nargs = "*", range = true })
 
+
+            vim.api.nvim_create_autocmd("BufEnter", {
+                pattern = "copilot-chat",
+                callback = function()
+                    vim.opt_local.relativenumber = false
+                    vim.opt_local.number = false
+                end,
+            })
             -- Inline chat with Copilot
             vim.api.nvim_create_user_command("CopilotChatInline", function(args)
                 chat.ask(args.args, {
@@ -158,21 +163,6 @@ return {
             vim.api.nvim_create_user_command("CopilotChatBuffer", function(args)
                 chat.ask(args.args, { selection = select.buffer })
             end, { nargs = "*", range = true })
-
-            -- Custom buffer for CopilotChat
-            vim.api.nvim_create_autocmd("BufEnter", {
-                pattern = "copilot-*",
-                callback = function()
-                    vim.opt_local.relativenumber = true
-                    vim.opt_local.number = true
-
-                    -- Get current filetype and set it to markdown if the current filetype is copilot-chat
-                    local ft = vim.bo.filetype
-                    if ft == "copilot-chat" then
-                        vim.bo.filetype = "markdown"
-                    end
-                end,
-            })
         end,
         event = "VeryLazy",
         keys = {

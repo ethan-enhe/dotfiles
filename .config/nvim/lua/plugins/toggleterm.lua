@@ -15,7 +15,6 @@ return {
         })
 
         function _G.set_terminal_keymaps()
-            local opts = { buffer = 0 }
             vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], { desc = "Exit terminal mode", buffer = 0 })
             -- vim.keymap.set('t', 'jj', [[<C-\><C-n>]], { desc = "Exit terminal mode", buffer = 0 })
             vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], { desc = "Move to left window", buffer = 0 })
@@ -32,6 +31,7 @@ return {
             callback = function()
                 set_terminal_keymaps()
                 vim.cmd([[setlocal nospell]])
+                vim.cmd([[set winfixbuf]])
             end,
             desc = "Mappings for navigation with a terminal",
         })
