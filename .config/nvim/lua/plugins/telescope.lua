@@ -7,7 +7,7 @@ return {
         config = function()
             -- [[ Configure Telescope ]]
             -- See `:help telescope` and `:help telescope.setup()`
-            local actions = require("telescope.actions")
+            -- local actions = require("telescope.actions")
             -- local open_with_trouble = require("trouble.sources.telescope").open
 
             -- Use this to add more results without clearing the trouble list
@@ -42,6 +42,7 @@ return {
                 })
             end, { desc = '[/] Fuzzily search in current buffer]' })
 
+            vim.keymap.set('n', '<leader>sp', require('telescope.builtin').builtin, { desc = '[S]earch [P]icker' })
             vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
             vim.keymap.set('n', '<leader>sk', require('telescope.builtin').keymaps, { desc = '[S]earch [K]eymaps' })
             vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
@@ -50,6 +51,8 @@ return {
             vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
             vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics,
                 { desc = '[S]earch [D]iagnostics' })
+            vim.keymap.set('n', '<leader>ss', "<cmd>Telescope luasnip<cr>",
+                { desc = '[S]earch [S]nippets' })
         end
     },
     -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available

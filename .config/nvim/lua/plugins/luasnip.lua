@@ -1,7 +1,7 @@
 return {
     {
         'L3MON4D3/LuaSnip',
-        version = 'v2.*',            -- Follow latest release
+        version = 'v2.*',                -- Follow latest release
         build = 'make install_jsregexp', -- Install jsregexp (optional)
         dependencies = { 'rafamadriz/friendly-snippets' },
         config = function()
@@ -32,9 +32,15 @@ return {
         dependencies = { 'L3MON4D3/LuaSnip', 'lervag/vimtex' },
         config = function()
             require('luasnip-latex-snippets').setup({
-                use_treesitter = false, -- Use vimtex if false
+                use_treesitter = false,   -- Use vimtex if false
                 allow_on_markdown = true, -- Add snippets to markdown filetype
             })
         end,
     },
+    {
+        "benfowler/telescope-luasnip.nvim",
+        config = function()
+            require("telescope").load_extension("luasnip")
+        end,
+    }
 }

@@ -11,7 +11,7 @@ vim.keymap.set('n', '<leader><f9>', function()
     local exename = vim.fn.expand("%:p:r") .. ".exe"
     local filename = vim.fn.expand("%:p")
     vim.cmd [[w]]
-    vim.cmd("TermExec cmd=\"g++ -std=c++17 -lm -Wall -O3 -march=native  -fopenmp -lpthread " ..
+    vim.cmd("TermExec cmd=\"g++ -std=c++17 -lm -Wall -Ofast -march=native  -fopenmp -lpthread " ..
         filename .. " -o " .. exename .. "\"")
 end, { silent = true })
 

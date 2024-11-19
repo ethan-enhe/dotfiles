@@ -2,6 +2,7 @@
 require "opt"
 require "map"
 require "plug"
+require "autocmd"
 
 -- Function to safely require a module and handle errors
 local function safe_require(module)

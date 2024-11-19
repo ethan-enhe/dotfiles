@@ -1,4 +1,3 @@
--- Abbreviations used in this article and the LuaSnip docs
 local ls = require("luasnip")
 local s = ls.snippet
 local sn = ls.snippet_node
@@ -10,143 +9,94 @@ local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
+local utils = require("luasnip-latex-snippets.util.utils")
+local pipe, no_backslash = utils.pipe, utils.no_backslash
+
 local get_visual = function(args, parent)
     if (#parent.snippet.env.LS_SELECT_RAW > 0) then
         return sn(nil, i(1, parent.snippet.env.LS_SELECT_RAW))
-    else -- If LS_SELECT_RAW is empty, return a blank insert node
+    else
         return sn(nil, i(1))
     end
 end
+
 local tex_utils = {}
-tex_utils.in_mathzone = function() -- math context detection
+tex_utils.in_mathzone = function()
     return vim.fn['vimtex#syntax#in_mathzone']() == 1
 end
 tex_utils.in_text = function()
-    return not tex_utils.tex_utils.in_mathzone()
+    return not tex_utils.in_mathzone()
 end
-tex_utils.in_comment = function() -- comment detection
+tex_utils.in_comment = function()
     return vim.fn['vimtex#syntax#in_comment']() == 1
 end
-tex_utils.in_env = function(name) -- generic environment detection
+tex_utils.in_env = function(name)
     local is_inside = vim.fn['vimtex#env#is_inside'](name)
     return (is_inside[1] > 0 and is_inside[2] > 0)
 end
--- A few concrete environments---adapt as needed
-tex_utils.in_equation = function() -- equation environment detection
+tex_utils.in_equation = function()
     return tex_utils.in_env('equation')
 end
-tex_utils.in_itemize = function() -- itemize environment detection
+tex_utils.in_itemize = function()
     return tex_utils.in_env('itemize')
 end
-tex_utils.in_tikz = function() -- TikZ picture environment detection
+tex_utils.in_tikz = function()
     return tex_utils.in_env('tikzpicture')
 end
 
+local math_nobackslash = pipe({ tex_utils.in_mathzone, no_backslash })
+
 return {
-    -- Example: italic font implementing visual selection
-    s({
-            trig = "ti",
-            -- snippetType="autosnippet",
-            priority = 99
-        },
-        fmta("\\textit{<>}",
-            {
-                d(1, get_visual),
-            })
+    s({ trig = "ti", priority = 99 },
+        fmta("\\textit{<>}", { d(1, get_visual) }),
+        { condition = no_backslash }
     ),
-    s({
-            trig = "tt",
-            -- snippetType="autosnippet",
-            priority = 99
-        },
-        fmta("\\texttt{<>}",
-            {
-                d(1, get_visual),
-            })
+    s({ trig = "tt", priority = 99 },
+        fmta("\\texttt{<>}", { d(1, get_visual) }),
+        { condition = no_backslash }
     ),
-    s({
-            trig = "mr",
-            snippetType = "autosnippet",
-            priority = 99
-        },
-        fmta("\\mathrm{<>}",
-            {
-                d(1, get_visual),
-            }),
-        { condition = tex_utils.in_mathzone }
+    s({ trig = "mr", snippetType = "autosnippet", priority = 99 },
+        fmta("\\mathrm{<>}", { d(1, get_visual) }),
+        { condition = math_nobackslash }
     ),
-    s({
-            trig = "mb",
-            snippetType = "autosnippet",
-            priority = 99
-        },
-        fmta("\\mathbf{<>}",
-            {
-                d(1, get_visual),
-            }),
-        { condition = tex_utils.in_mathzone }
+    s({ trig = "mb", snippetType = "autosnippet", priority = 99 },
+        fmta("\\mathbf{<>}", { d(1, get_visual) }),
+        { condition = math_nobackslash }
     ),
-    s({
-            trig = "opn",
-            snippetType = "autosnippet",
-            priority = 99
-        },
-        fmta("\\operatorname{<>}",
-            {
-                d(1, get_visual),
-            }),
-        { condition = tex_utils.in_mathzone }
+    s({ trig = "opn", snippetType = "autosnippet", priority = 99 },
+        fmta("\\operatorname{<>}", { d(1, get_visual) }),
+        { condition = math_nobackslash }
     ),
-    s({
-            trig = "dx",
-            snippetType = "autosnippet",
-            priority = 99
-        },
-        fmta("\\mathrm{d}<>",
-            {
-                d(1, get_visual),
-            }),
-        { condition = tex_utils.in_mathzone }
+    s({ trig = "dx", snippetType = "autosnippet", priority = 99 },
+        fmta("\\mathrm{d}<>", { d(1, get_visual) }),
+        { condition = math_nobackslash }
     ),
-    s({
-            trig = "tb",
-            -- snippetType="autosnippet",
-            priority = 99
-        },
-        fmta("\\textbf{<>}",
-            {
-                d(1, get_visual),
-            })
+    s({ trig = "+-", snippetType = "autosnippet", priority = 99 },
+        fmta("\\pm<>", { d(1, get_visual) }),
+        { condition = math_nobackslash }
     ),
-    s({
-            trig = "sec",
-            -- snippetType="autosnippet",
-            priority = 99
-        },
-        fmta([[
-    \section*{<>}
-    ]],
-            {
-                i(1),
-            })
+    s({ trig = "land", snippetType = "autosnippet", priority = 99 },
+        fmta("\\land<>", { d(1, get_visual) }),
+        { condition = math_nobackslash }
     ),
-    s({
-            trig = "ssec",
-            -- snippetType="autosnippet",
-            priority = 99
-        },
-        fmta([[
-    \subsection*{<>}
-    ]],
-            {
-                i(1),
-            })
+    s({ trig = "lor", snippetType = "autosnippet", priority = 99 },
+        fmta("\\lor<>", { d(1, get_visual) }),
+        { condition = math_nobackslash }
     ),
-    s({
-            trig = "ff",
-            -- snippetType="autosnippet",
-            priority = 99
-        },
+    s({ trig = "xor", snippetType = "autosnippet", priority = 99 },
+        fmta("\\oplus<>", { d(1, get_visual) }),
+        { condition = math_nobackslash }
+    ),
+    s({ trig = "tb", priority = 99 },
+        fmta("\\textbf{<>}", { d(1, get_visual) })
+    ),
+    s({ trig = "sec", priority = 99 },
+        fmta("\\section*{<>}", { i(1) })
+    ),
+    s({ trig = "ssec", priority = 99 },
+        fmta("\\subsection*{<>}", { i(1) })
+    ),
+    s({ trig = "ff", priority = 99 },
         fmta([[
 \begin{figure}[H]
 \centering
@@ -154,37 +104,26 @@ return {
 \caption{<>}
 \label{<>}
 \end{figure}
-  ]], {
-            i(1), i(2), i(3) }
-        )
+]], { i(1), i(2), i(3) })
     ),
-    s({
-        trig = "tpl",
-        snippetType = "autosnippet",
-        priority = 99
-    }, fmta([[
-\documentclass[UTF8, 12pt]{ctexart} % 设置默认字体大小为 12pt
+    s({ trig = "tpl", snippetType = "autosnippet", priority = 99 },
+        fmta([[
+\documentclass[UTF8, 12pt]{ctexart}
 
-% 使用更适合论文的数学包和字体设置
 \usepackage{amsmath, amssymb, amsthm}
-\usepackage{mathtools} % 提供 amsmath 的扩展
-\usepackage{mathrsfs} % 提供花体字体
+\usepackage{mathtools}
+\usepackage{mathrsfs}
 
-% 设置页面几何结构
 \usepackage[a4paper, margin=1in]{geometry}
 
-% 设置算法环境
 \usepackage{algorithm}
-\usepackage[noend]{algorithmic} % 去掉end关键字，更简洁
+\usepackage[noend]{algorithmic}
 
-% 设置颜色和代码高亮
 \usepackage[dvipsnames]{xcolor}
 \usepackage{listings}
 
-% 图形支持
 \usepackage{graphicx}
 
-% 超链接
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
@@ -195,7 +134,6 @@ return {
     pdfpagemode=FullScreen,
 }
 
-% 定理环境
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{lemma}[theorem]{Lemma}
@@ -204,7 +142,6 @@ return {
 
 \renewcommand{\proofname}{\textbf{Proof}}
 
-% 自定义命令
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\Var}{\mathrm{Var}}
 \newcommand{\Cov}{\mathrm{Cov}}
@@ -212,30 +149,27 @@ return {
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 
-% 设置代码样式
 \lstset{
-    language=C++, % 设置语言
-    basicstyle=\ttfamily\footnotesize, % 设置字体族和大小
-    breaklines=true, % 自动换行
-    keywordstyle=\bfseries\color{NavyBlue}, % 设置关键字为粗体，颜色为 NavyBlue
-    morekeywords={}, % 设置更多的关键字，用逗号分隔
-    emph={self}, % 指定强调词，如果有多个，用逗号隔开
-    emphstyle=\bfseries\color{Rhodamine}, % 强调词样式设置
-    commentstyle=\itshape\color{black!50!white}, % 设置注释样式，斜体，浅灰色
-    stringstyle=\bfseries\color{PineGreen!90!black}, % 设置字符串样式
+    language=C++,
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    keywordstyle=\bfseries\color{NavyBlue},
+    morekeywords={},
+    emph={self},
+    emphstyle=\bfseries\color{Rhodamine},
+    commentstyle=\itshape\color{black!50!white},
+    stringstyle=\bfseries\color{PineGreen!90!black},
     columns=flexible,
-    numbers=left, % 显示行号在左边
-    numbersep=5pt, % 设置行号的具体位置
-    numberstyle=\tiny\color{gray}, % 缩小行号并设置颜色
-    frame=single, % 边框
-    framesep=1em % 设置代码与边框的距离
+    numbers=left,
+    numbersep=5pt,
+    numberstyle=\tiny\color{gray},
+    frame=single,
+    framesep=1em
 }
 
-% 设置行距
 \usepackage{setspace}
-\onehalfspacing % 1.5倍行距
+\onehalfspacing
 
-% 文章信息
 \title{<>}
 \author{Zhaienhe Zhou \\ \texttt{zehzhou@mail.ustc.edu.cn}}
 \date{}
@@ -243,5 +177,6 @@ return {
 \maketitle
 <>
 \end{document}
-  ]], { i(1), i(0) }))
+]], { i(1), i(0) })
+    )
 }
