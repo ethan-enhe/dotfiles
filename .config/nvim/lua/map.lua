@@ -3,14 +3,14 @@
 
 -- Set <space> as the leader key
 -- NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 local map = vim.keymap.set
 
 -- General Keymaps {{{
 -- Disable space key
-map({ 'n', 'v' }, '<Space>', '<nop>', { silent = true })
+map({ "n", "v" }, "<Space>", "<nop>", { silent = true })
 
 -- Remap for dealing with word wrap
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
@@ -19,46 +19,60 @@ map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, 
 map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 
 -- Toggle relative line numbers
-map('n', '<leader>rl', function()
-    vim.opt.relativenumber = not vim.opt.relativenumber:get()
+map("n", "<leader>rl", function()
+	vim.opt.relativenumber = not vim.opt.relativenumber:get()
 end, { silent = true, desc = "Toggle relative line numbers" })
 
 -- Save and source files
-map('n', '<leader>w', '<cmd>w!<cr>', { silent = true, desc = "Save file" })
-map('n', '<leader>s', '<cmd>source %<cr>', { silent = true, desc = "Source current file" })
+map("n", "<leader>w", "<cmd>w!<cr>", { silent = true, desc = "Save file" })
+map("n", "<leader>s", "<cmd>source %<cr>", { silent = true, desc = "Source current file" })
 
 -- Change directory to the current file's directory and print the working directory
-map('n', '<leader>cd', function()
-    local cwd = vim.fn.expand("%:p:h")
-    vim.cmd("cd " .. cwd)
-    print("Changed directory to: " .. cwd)
+map("n", "<leader>cd", function()
+	local cwd = vim.fn.expand("%:p:h")
+	vim.cmd("cd " .. cwd)
+	print("Changed directory to: " .. cwd)
 end, { silent = true, desc = "Change to file's directory and print working directory" })
 
 -- Yank current file directory
-map('n', '<leader>yd', function()
-    local cwd = vim.fn.expand("%:p:h")
-    vim.fn.setreg('+', cwd)
-    print('Current file directory yanked: ' .. cwd)
+map("n", "<leader>yd", function()
+	local cwd = vim.fn.expand("%:p:h")
+	vim.fn.setreg("+", cwd)
+	print("Current file directory yanked: " .. cwd)
 end, { silent = true, desc = "Yank current file directory" })
 
 -- Yank current file name (with full path)
-map('n', '<leader>yf', function()
-    local full_fn = vim.fn.expand("%:p")
-    vim.fn.setreg('+', full_fn)
-    print('Current file name yanked: ' .. full_fn)
+map("n", "<leader>yf", function()
+	local full_fn = vim.fn.expand("%:p")
+	vim.fn.setreg("+", full_fn)
+	print("Current file name yanked: " .. full_fn)
 end, { silent = true, desc = "Yank current file name (with full path)" })
 
 -- Edit the Neovim configuration file
-map('n', '<leader>cf', '<cmd>e $MYVIMRC<cr><cmd>cd %:p:h<cr>', { silent = true, desc = "Edit Neovim configuration file" })
+map(
+	"n",
+	"<leader>cf",
+	"<cmd>e $MYVIMRC<cr><cmd>cd %:p:h<cr>",
+	{ silent = true, desc = "Edit Neovim configuration file" }
+)
 
 -- Insert template code
-map('n', '<leader>tt', '<cmd>0 r ~/Documents/mycode/template/other/cf.cpp<cr>',
-    { silent = true, desc = "Insert template code" })
-map('n', '<leader>tr', ':r ~/Documents/mycode/template/', { silent = true, desc = "Insert template code from directory" })
+map(
+	"n",
+	"<leader>tt",
+	"<cmd>0 r ~/Documents/mycode/template/other/cf.cpp<cr>",
+	{ silent = true, desc = "Insert template code" }
+)
+map(
+	"n",
+	"<leader>tr",
+	":r ~/Documents/mycode/template/",
+	{ silent = true, desc = "Insert template code from directory" }
+)
 
 -- Remap 0 to go to the first non-blank character of the line
-map('n', '0', '^', { desc = "Go to first non-blank character of the line" })
-map('x', '0', '^', { desc = "Go to first non-blank character of the line" })
+map("n", "0", "^", { desc = "Go to first non-blank character of the line" })
+map("x", "0", "^", { desc = "Go to first non-blank character of the line" })
 
 -- Clear search highlighting
 map({ "i", "n", "v" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
@@ -97,15 +111,15 @@ map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window W
 
 -- Buffer Operations {{{
 map("n", "<leader>bd", function()
-    Snacks.bufdelete()
+	Snacks.bufdelete()
 end, { desc = "Delete Buffer" })
 map("n", "<leader>bo", function()
-    Snacks.bufdelete.other()
+	Snacks.bufdelete.other()
 end, { desc = "Delete Other Buffers" })
 map("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
 
-map('n', '<leader>l', '<cmd>bnext<cr>', { silent = true, desc = "Go to next buffer" })
-map('n', '<leader>h', '<cmd>bprevious<cr>', { silent = true, desc = "Go to previous buffer" })
+map("n", "<leader>l", "<cmd>bnext<cr>", { silent = true, desc = "Go to next buffer" })
+map("n", "<leader>h", "<cmd>bprevious<cr>", { silent = true, desc = "Go to previous buffer" })
 -- }}}
 
 -- Line Movement {{{
@@ -120,4 +134,8 @@ map("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", {
 -- Quickfix and Location List {{{
 map("n", "<leader>xl", "<cmd>lopen<cr>", { desc = "Location List" })
 map("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
+
+-- Diagnostic keymaps
+vim.keymap.set("n", "[g", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]g", vim.diagnostic.goto_next)
 -- }}}
