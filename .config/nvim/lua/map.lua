@@ -48,6 +48,11 @@ map("n", "<leader>yf", function()
 	print("Current file name yanked: " .. full_fn)
 end, { silent = true, desc = "Yank current file name (with full path)" })
 
+map("n", "<leader>bl", function()
+	vim.cmd("%s/\v(\\[{}])/\\\\\1/gc")
+	vim.cmd("%s/|/\\|/gc")
+end, { silent = true, desc = "Escape special characters in buffer" })
+
 -- Edit the Neovim configuration file
 map(
 	"n",
