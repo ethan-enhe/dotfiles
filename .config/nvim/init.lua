@@ -1,9 +1,3 @@
--- Load core configurations
-require("opt")
-require("map")
-require("plug")
-require("autocmd")
-
 -- Function to safely require a module and handle errors
 local function safe_require(module)
 	local ok, err = pcall(require, module)
@@ -12,8 +6,15 @@ local function safe_require(module)
 	end
 end
 
+-- Load core configurations
+safe_require("opt")
+safe_require("map")
+safe_require("plug")
+safe_require("autocmd")
+
+
 -- Get the path to the user configuration directory
-local user_config_path = vim.fn.stdpath("config") .. "/lua/user"
+-- local user_config_path = vim.fn.stdpath("config") .. "/lua/user"
 
 -- Iterate through all .lua files in the user configuration directory
 -- local function load_user_configs(path)
