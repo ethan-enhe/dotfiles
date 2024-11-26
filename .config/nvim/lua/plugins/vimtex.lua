@@ -8,10 +8,8 @@ return {
 		vim.g.vimtex_mappings_disable = { ["n"] = { "K" } } -- disable `K` as it conflicts with LSP hover
 		vim.g.vimtex_quickfix_method = vim.fn.executable("pplatex") == 1 and "pplatex" or "latexlog"
 		vim.g.vimtex_quickfix_ignore_filters = {
-			"Underfull \\hbox (badness [0-9]*) in paragraph at lines",
-			"Overfull \\hbox ([0-9]*.[0-9]*pt too wide) in paragraph at lines",
-			"Underfull \\hbox (badness [0-9]*) in ",
-			"Overfull \\hbox ([0-9]*.[0-9]*pt too wide) in ",
+			"Underfull",
+			"Overfull",
 			"Package hyperref Warning: Token not allowed in a PDF string",
 			"Package typearea Warning: Bad type area settings!",
 		}
