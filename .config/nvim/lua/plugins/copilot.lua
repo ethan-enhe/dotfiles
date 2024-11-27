@@ -56,6 +56,9 @@ return {
 			local user = vim.env.USER or "User"
 			user = user:sub(1, 1):upper() .. user:sub(2)
 			return {
+				-- highlight_headers = false,
+				-- separator = "---",
+				-- error_header = "> [!ERROR] Error",
 				-- auto_insert_mode = true,
 				-- auto_follow_cursor = false, -- Don't follow the cursor after getting response
 				question_header = "  " .. user .. " ",
@@ -88,26 +91,6 @@ return {
 					accept_diff = {
 						normal = "<C-y>",
 						insert = "<C-y>",
-					},
-					-- Yank the diff in the response to register
-					yank_diff = {
-						normal = "gmy",
-					},
-					-- Show the diff
-					show_diff = {
-						normal = "gmd",
-					},
-					-- Show the prompt
-					show_system_prompt = {
-						normal = "gmp",
-					},
-					-- Show the user selection
-					show_user_selection = {
-						normal = "gms",
-					},
-					-- Show help
-					show_help = {
-						normal = "gmh",
 					},
 				},
 			}
