@@ -20,6 +20,7 @@ vim.opt.mouse = "a"
 -- Enable break indent
 vim.opt.breakindent = true
 vim.opt.linebreak = true -- Wrap lines at convenient points
+-- vim.opt.wrap = false -- Don't wrap lines
 
 -- Save undo history
 vim.opt.undofile = true
@@ -31,7 +32,6 @@ vim.opt.pumheight = 10 -- Maximum number of entries in a popup
 -- Case insensitive searching UNLESS /C or capital in search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.wrap = false -- Don't wrap lines
 
 -- Decrease update time
 vim.opt.updatetime = 250

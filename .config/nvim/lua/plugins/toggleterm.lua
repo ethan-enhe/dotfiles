@@ -42,5 +42,42 @@ return {
 		vim.api.nvim_create_user_command("Tldr", function(opts)
 			require("toggleterm").exec("tldr " .. opts.args)
 		end, { desc = "Run tldr with the given argument", nargs = 1 })
+
+		-- Compile and run C++ code
+		vim.keymap.set("n", "<f9>", function()
+			local exename = vim.fn.expand("%:p:r") .. ".exe"
+			local filename = vim.fn.expand("%:p")
+			vim.cmd([[w]])
+			vim.cmd(
+				'TermExec cmd="g++ -std=c++17 -lm -Wall -O2 -fsanitize=address,undefined -D LOCAL '
+					.. filename
+					.. " -o "
+					.. exename
+					.. '"'
+			)
+		end, { silent = true })
+
+		vim.keymap.set("n", "<leader><f9>", function()
+			local exename = vim.fn.expand("%:p:r") .. ".exe"
+			local filename = vim.fn.expand("%:p")
+			vim.cmd([[w]])
+			vim.cmd(
+				'TermExec cmd="g++ -std=c++17 -lm -Wall -Ofast -march=native  -fopenmp -lpthread '
+					.. filename
+					.. " -o "
+					.. exename
+					.. '"'
+			)
+		end, { silent = true })
+
+		vim.keymap.set("n", "<f8>", function()
+			local filename = vim.fn.expand("%:p:r") .. ".exe"
+			vim.cmd('TermExec cmd="time ' .. filename .. '"')
+		end, { silent = true })
+
+		vim.keymap.set("n", "<leader><f8>", function()
+			local filename = vim.fn.expand("%:p:r") .. ".exe" .. " < " .. vim.fn.expand("%:p:h") .. "/test.in"
+			vim.cmd('TermExec cmd="time ' .. filename .. '"')
+		end, { silent = true })
 	end,
 }

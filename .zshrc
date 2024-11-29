@@ -40,11 +40,16 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 
 ulimit -s unlimited
-alias ls='ls --color=auto --hyperlink=auto'
+alias ls='lsd --hyperlink=auto'
 alias icat="kitten icat"
 alias config='/usr/bin/git --git-dir=$HOME/Documents/dotfiles --work-tree=$HOME'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias zb='z -b'
+
+alias zc='z -c'      # 严格匹配当前路径的子路径
+alias zz='z -i'      # 使用交互式选择模式
+alias zf='z -I'      # 使用 fzf 对多个结果进行选择
+alias zb='z -b'      # 快速回到父目录
+alias zh='z -I -t .' # 使用 fzf 选择最近去过的目录
 
 
 # Install Ruby Gems to ~/gems
@@ -56,4 +61,4 @@ export PATH=$PATH:/opt/cross-tools.gcc_glibc/bin:/opt/gdb/bin:/opt/qemu/bin
 
 
 eval "$(starship init zsh)"
-eval "$(lua /usr/share/z.lua/z.lua --init zsh enhanced once echo fzf)"
+eval "$(lua /usr/share/z.lua/z.lua --init zsh enhanced once echo)"
