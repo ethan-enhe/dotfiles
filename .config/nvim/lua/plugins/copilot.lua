@@ -96,15 +96,15 @@ return {
 			local user = vim.env.USER or "User"
 			user = user:sub(1, 1):upper() .. user:sub(2)
 			return {
-				model = "claude-3.5-sonnet",
+				-- model = "claude-3.5-sonnet",
 				window = {
 					width = 0.35,
 				},
 				mappings = {
 					-- Use tab for completion
 					complete = {
-						detail = "Use @<Tab> or /<Tab> for options.",
-						insert = "<Tab>",
+						detail = "Use @<c-n> or /<c-n> for options.",
+						insert = "<c-n>",
 					},
 					-- Close the chat
 					close = {

@@ -1,4 +1,4 @@
-local utils = require("utils")
+local map = require("utils").map
 return {
 	"akinsho/toggleterm.nvim",
 	config = function()
@@ -16,14 +16,13 @@ return {
 		})
 
 		function _G.set_terminal_keymaps()
-			utils.map("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode", buffer = 0 })
-			-- utils.map('t', 'jj', [[<C-\><C-n>]], { desc = "Exit terminal mode", buffer = 0 })
-			utils.map("t", "<C-h>", [[<Cmd>wincmd h<CR>]], { desc = "Move to left window", buffer = 0 })
-			utils.map("t", "<C-j>", [[<Cmd>wincmd j<CR>]], { desc = "Move to bottom window", buffer = 0 })
-			utils.map("t", "<C-k>", [[<Cmd>wincmd k<CR>]], { desc = "Move to top window", buffer = 0 })
-			utils.map("t", "<C-l>", [[<Cmd>wincmd l<CR>]], { desc = "Move to right window", buffer = 0 })
-			utils.map("t", "<leader>l", [[<nop>]], { desc = "Disable <leader>l in terminal mode", buffer = 0 })
-			utils.map("t", "<leader>h", [[<nop>]], { desc = "Disable <leader>h in terminal mode", buffer = 0 })
+			map("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode", buffer = 0 })
+			map("t", "<C-h>", [[<Cmd>wincmd h<CR>]], { desc = "Move to left window", buffer = 0 })
+			map("t", "<C-j>", [[<Cmd>wincmd j<CR>]], { desc = "Move to bottom window", buffer = 0 })
+			map("t", "<C-k>", [[<Cmd>wincmd k<CR>]], { desc = "Move to top window", buffer = 0 })
+			map("t", "<C-l>", [[<Cmd>wincmd l<CR>]], { desc = "Move to right window", buffer = 0 })
+			map("t", "<leader>l", [[<nop>]], { desc = "Disable <leader>l in terminal mode", buffer = 0 })
+			map("t", "<leader>h", [[<nop>]], { desc = "Disable <leader>h in terminal mode", buffer = 0 })
 		end
 
 		-- if you only want these mappings for toggle term use term://*toggleterm#* instead
@@ -46,7 +45,7 @@ return {
 
 		-- Compile and run C++ code
 		-- Map <f9> to compile the current C++ file with debugging flags and AddressSanitizer enabled
-		utils.map("n", "<f9>", function()
+		map("n", "<f9>", function()
 			local exename = vim.fn.expand("%:p:r") .. ".exe"
 			local filename = vim.fn.expand("%:p")
 			vim.cmd([[w]])
@@ -59,7 +58,7 @@ return {
 			)
 		end, { desc = "Compile with debugging flags" })
 
-		utils.map("n", "<leader><f9>", function()
+		map("n", "<leader><f9>", function()
 			local exename = vim.fn.expand("%:p:r") .. ".exe"
 			local filename = vim.fn.expand("%:p")
 			vim.cmd([[w]])
@@ -72,12 +71,12 @@ return {
 			)
 		end, { desc = "Compile with optimization flags" })
 
-		utils.map("n", "<f8>", function()
+		map("n", "<f8>", function()
 			local filename = vim.fn.expand("%:p:r") .. ".exe"
 			vim.cmd('TermExec cmd="time ' .. filename .. '"')
 		end, { desc = "Run and measure time" })
 
-		utils.map("n", "<leader><f8>", function()
+		map("n", "<leader><f8>", function()
 			local filename = vim.fn.expand("%:p:r") .. ".exe" .. " < " .. vim.fn.expand("%:p:h") .. "/test.in"
 			vim.cmd('TermExec cmd="time ' .. filename .. '"')
 		end, { desc = "Run with input and measure time" })
