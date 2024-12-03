@@ -28,14 +28,27 @@ return {
 				component_separators = "",
 			},
 			sections = {
-				lualine_a = { "mode" },
+				lualine_a = {
+					{
+						"mode",
+						fmt = function(str)
+							return str:sub(1, 1)
+						end,
+					},
+				},
 				lualine_b = { "branch" },
 
 				lualine_c = {
 					{
 						"diagnostics",
 					},
-					{ "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+					{
+						"filetype",
+						icon_only = true,
+						separator = "",
+						-- padding = { left = 1, right = 0 }
+					},
+					{ "filename", path = 1, shorting_target = 60 },
 				},
 				lualine_x = {
 					{
@@ -46,15 +59,15 @@ return {
 							return package.loaded["noice"] and require("noice").api.status.command.has()
 						end,
 					},
-					-- {
-					-- 	function()
-					-- 		return require("noice").api.status.mode.get()
-					-- 	end,
-					-- 	cond = function()
-					-- 		return package.loaded["noice"] and require("noice").api.status.mode.has()
-					-- 	end,
-					-- },
-					{ "copilot" },
+					{
+						function()
+							return require("noice").api.status.mode.get()
+						end,
+						cond = function()
+							return package.loaded["noice"] and require("noice").api.status.mode.has()
+						end,
+					},
+					{ "copilot", separator = "" },
 					{
 						require("lazy.status").updates,
 						cond = require("lazy.status").has_updates,
@@ -74,8 +87,15 @@ return {
 					},
 				},
 				lualine_y = {
-					{ "progress", separator = " ", padding = { left = 1, right = 0 } },
-					{ "location", padding = { left = 0, right = 1 } },
+					{
+						"progress",
+						separator = "",
+						-- padding = { left = 1, right = 0 }
+					},
+					{
+						"location",
+						-- padding = { left = 0, right = 1 }
+					},
 				},
 				lualine_z = {
 					function()

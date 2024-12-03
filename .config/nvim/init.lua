@@ -12,7 +12,6 @@ safe_require("map")
 safe_require("plug")
 safe_require("autocmd")
 
-
 -- Get the path to the user configuration directory
 -- local user_config_path = vim.fn.stdpath("config") .. "/lua/user"
 

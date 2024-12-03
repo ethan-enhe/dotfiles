@@ -1,6 +1,6 @@
 -- [[ Basic Keymaps ]]
 -- Maps unrelated to plugins should be in this file
-local utils=require("utils")
+local utils = require("utils")
 
 -- Set <space> as the leader key
 -- NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
@@ -18,20 +18,16 @@ utils.map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = 
 utils.map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 
 -- Toggle relative line numbers
-utils.map("n", "<leader>rl", function()
+utils.map("n", "<leader>tn", function()
 	vim.opt.relativenumber = not vim.opt.relativenumber:get()
 end, { silent = true, desc = "Toggle relative line numbers" })
-
--- Save and source files
-utils.map("n", "<leader>w", "<cmd>w!<cr>", { silent = true, desc = "Save file" })
-utils.map("n", "<leader>s", "<cmd>source %<cr>", { silent = true, desc = "Source current file" })
 
 -- Change directory to the current file's directory and print the working directory
 utils.map("n", "<leader>cd", function()
 	local cwd = vim.fn.expand("%:p:h")
 	vim.cmd("cd " .. cwd)
 	print("Changed directory to: " .. cwd)
-end, { silent = true, desc = "Change to file's directory and print working directory" })
+end, { silent = true, desc = "Change to file's directory" })
 
 -- Yank current file directory
 utils.map("n", "<leader>yd", function()
@@ -47,31 +43,17 @@ utils.map("n", "<leader>yf", function()
 	print("Current file name yanked: " .. full_fn)
 end, { silent = true, desc = "Yank current file name (with full path)" })
 
-utils.map("n", "<leader>bl", function()
+utils.map("n", "<leader>dm", function()
 	vim.cmd("%s/\\v(\\[{}])/\\\\\\1/gc")
 	vim.cmd("%s/|/\\|/gc")
-end, { silent = true, desc = "Escape special characters in buffer" })
-
--- Edit the Neovim configuration file
-utils.map(
-	"n",
-	"<leader>cf",
-	"<cmd>e $MYVIMRC<cr><cmd>cd %:p:h<cr>",
-	{ silent = true, desc = "Edit Neovim configuration file" }
-)
+end, { silent = true, desc = "Escape special characters for [m]arkdown" })
 
 -- Insert template code
 utils.map(
 	"n",
-	"<leader>tt",
-	"<cmd>0 r ~/Documents/mycode/template/other/cf.cpp<cr>",
+	"<leader>dt",
+	"<cmd>0 r " .. vim.g.template_dir .. "other/cf.cpp<cr>",
 	{ silent = true, desc = "Insert template code" }
-)
-utils.map(
-	"n",
-	"<leader>tr",
-	":r ~/Documents/mycode/template/",
-	{ silent = true, desc = "Insert template code from directory" }
 )
 
 -- Remap 0 to go to the first non-blank character of the line

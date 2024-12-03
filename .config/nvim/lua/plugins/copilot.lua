@@ -25,10 +25,9 @@ return {
 		config = function()
 			require("copilot").setup({
 				suggestion = {
-					enable = true,
 					auto_trigger = true,
 					hide_during_completion = false,
-					debounce = 75,
+					debounce = 50,
 					keymap = {
 						accept = "<M-Up>",
 						accept_word = "<M-Right>",
@@ -47,56 +46,13 @@ return {
 		end,
 	},
 	{ "AndreM222/copilot-lualine" },
-
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
-		branch = "canary",
-		cmd = "CopilotChat",
-		opts = function()
-			local user = vim.env.USER or "User"
-			user = user:sub(1, 1):upper() .. user:sub(2)
-			return {
-				-- highlight_headers = false,
-				-- separator = "---",
-				-- error_header = "> [!ERROR] Error",
-				-- auto_insert_mode = true,
-				-- auto_follow_cursor = false, -- Don't follow the cursor after getting response
-				question_header = "  " .. user .. " ",
-				answer_header = "  Copilot ",
-				window = {
-					width = 0.35,
-				},
-				mappings = {
-					-- Use tab for completion
-					complete = {
-						detail = "Use @<Tab> or /<Tab> for options.",
-						insert = "<Tab>",
-					},
-					-- Close the chat
-					close = {
-						normal = "q",
-						insert = "<C-c>",
-					},
-					-- Reset the chat buffer
-					reset = {
-						normal = "<C-x>",
-						insert = "<C-x>",
-					},
-					-- Submit the prompt to Copilot
-					submit_prompt = {
-						normal = "<CR>",
-						insert = "<C-CR>",
-					},
-					-- Accept the diff
-					accept_diff = {
-						normal = "<C-y>",
-						insert = "<C-y>",
-					},
-				},
-			}
-		end,
+		dependencies = {
+			{ "zbirenbaum/copilot.lua" }, -- or zbirenbaum/copilot.lua
+			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+		},
 		keys = {
-			{ "<leader>a", "", desc = "+ai", mode = { "n", "v" } },
 			{
 				"<leader>av",
 				function()
@@ -136,6 +92,43 @@ return {
 			},
 			{ "<leader>a?", "<cmd>CopilotChatModels<cr>", desc = "CopilotChat - Select Models" },
 		},
+		opts = function()
+			local user = vim.env.USER or "User"
+			user = user:sub(1, 1):upper() .. user:sub(2)
+			return {
+				model = "claude-3.5-sonnet",
+				window = {
+					width = 0.35,
+				},
+				mappings = {
+					-- Use tab for completion
+					complete = {
+						detail = "Use @<Tab> or /<Tab> for options.",
+						insert = "<Tab>",
+					},
+					-- Close the chat
+					close = {
+						normal = "q",
+						insert = "<C-c>",
+					},
+					-- Reset the chat buffer
+					reset = {
+						normal = "<C-x>",
+						insert = "<C-x>",
+					},
+					-- Submit the prompt to Copilot
+					submit_prompt = {
+						normal = "<CR>",
+						insert = "<C-CR>",
+					},
+					-- Accept the diff
+					accept_diff = {
+						normal = "<C-y>",
+						insert = "<C-y>",
+					},
+				},
+			}
+		end,
 		config = function(_, opts)
 			local chat = require("CopilotChat")
 

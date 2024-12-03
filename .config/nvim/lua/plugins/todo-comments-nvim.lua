@@ -5,7 +5,6 @@ return {
 	config = function()
 		require("todo-comments").setup({
 			signs = false,
-
 			search = {
 				pattern = [[\b(KEYWORDS)\b]], -- match without the extra colon. You'll likely get false positives
 			},

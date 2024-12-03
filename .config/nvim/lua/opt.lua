@@ -5,7 +5,10 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.opt.laststatus = 3
+vim.g.template_dir = vim.fn.expand("~/Documents/mycode/template/")
+
+vim.o.laststatus = 3
+
 vim.opt.wildmode = "longest:full,full" -- Command-line completion mode
 
 -- Make line numbers default
@@ -16,15 +19,13 @@ vim.opt.virtualedit = "block" -- Allow cursor to move where there is no text in 
 
 -- Enable mouse mode
 vim.opt.mouse = "a"
+vim.opt.showmode = false -- Don't show mode
 
 -- Enable break indent
 vim.opt.breakindent = true
-vim.opt.linebreak = true -- Wrap lines at convenient points
--- vim.opt.wrap = false -- Don't wrap lines
 
 -- Save undo history
 vim.opt.undofile = true
-vim.opt.undolevels = 10000
 
 -- vim.opt.pumblend = 10 -- Popup blend
 vim.opt.pumheight = 10 -- Maximum number of entries in a popup
@@ -59,12 +60,14 @@ vim.opt.fileencodings = "utf8,cp936,gb18030,big5"
 -- Enable folding
 vim.opt.foldenable = true
 vim.opt.foldmethod = "marker"
+-- vim.wo.foldmethod = "expr"
+-- vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 -- Enable terminal GUI colors
 vim.opt.termguicolors = true
 vim.opt.smoothscroll = true
--- vim.opt.splitbelow = true -- Put new windows below current
--- vim.opt.splitright = true -- Put new windows right of current
+vim.opt.splitbelow = true -- Put new windows below current
+vim.opt.splitright = true -- Put new windows right of current
 
 if vim.g.neovide then
 	-- Settings specific to Neovide
