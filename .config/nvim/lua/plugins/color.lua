@@ -6,23 +6,18 @@ return {
 		config = function()
 			require("catppuccin").setup({
 				integrations = {
-					mason = true,
+					notify = true,
 					nvim_surround = true,
+					fidget = true,
+					mason = true,
+					noice = true,
 					which_key = true,
+					snacks = true,
 				},
 				transparent_background = true,
 			})
 			vim.cmd.colorscheme("catppuccin")
 		end,
-		integrations = {
-			notify = true,
-			nvim_surround = true,
-			fidget = true,
-			mason = true,
-			noice = true,
-			which_key = true,
-			snacks = true,
-		},
 	},
 	-- {
 	-- 	"scottmckendry/cyberdream.nvim",

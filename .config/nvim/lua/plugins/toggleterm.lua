@@ -21,8 +21,6 @@ return {
 			map("t", "<C-j>", [[<Cmd>wincmd j<CR>]], { desc = "Move to bottom window", buffer = 0 })
 			map("t", "<C-k>", [[<Cmd>wincmd k<CR>]], { desc = "Move to top window", buffer = 0 })
 			map("t", "<C-l>", [[<Cmd>wincmd l<CR>]], { desc = "Move to right window", buffer = 0 })
-			map("t", "<leader>l", [[<nop>]], { desc = "Disable <leader>l in terminal mode", buffer = 0 })
-			map("t", "<leader>h", [[<nop>]], { desc = "Disable <leader>h in terminal mode", buffer = 0 })
 		end
 
 		-- if you only want these mappings for toggle term use term://*toggleterm#* instead

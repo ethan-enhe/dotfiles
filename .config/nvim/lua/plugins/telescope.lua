@@ -90,9 +90,9 @@ return {
 				builtin.find_files({ cwd = vim.fn.stdpath("config") })
 			end, { desc = "[S]earch [N]eovim files" })
 
-			vim.keymap.set("n", "<leader>st", function()
+			vim.keymap.set("n", "<leader>sc", function()
 				builtin.find_files({ cwd = vim.g.template_dir })
-			end, { desc = "[S]earch [T]emplates" })
+			end, { desc = "[S]earch [C]ode Templates" })
 
 			vim.keymap.set("n", "<leader>ss", function()
 				require("telescope").extensions.luasnip.luasnip({})

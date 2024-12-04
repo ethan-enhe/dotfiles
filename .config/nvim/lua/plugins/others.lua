@@ -1,10 +1,10 @@
 return {
-	{
-		"kylechui/nvim-surround",
-		config = function()
-			require("nvim-surround").setup({})
-		end,
-	},
+	-- {
+	-- 	"kylechui/nvim-surround",
+	-- 	config = function()
+	-- 		require("nvim-surround").setup({})
+	-- 	end,
+	-- },
 	{
 		"L3MON4D3/LuaSnip",
 		-- follow latest release.
