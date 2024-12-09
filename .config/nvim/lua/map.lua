@@ -45,7 +45,7 @@ end, { silent = true, desc = "Yank current file name (with full path)" })
 
 map("n", "<leader>dm", function()
 	vim.cmd("%s/\\v(\\[{}])/\\\\\\1/gc")
-	vim.cmd("%s/|/\\|/gc")
+	vim.cmd("%s/|/\\vert/gc")
 end, { silent = true, desc = "Escape special characters for [m]arkdown" })
 
 -- Insert template code
@@ -128,4 +128,8 @@ end, { desc = "Go to previous diagnostic" })
 map("n", "]g", function()
 	vim.diagnostic.jump({ count = 1, float = true })
 end, { desc = "Go to next diagnostic" })
+
+map("n", "<leader>e", function()
+	vim.diagnostic.open_float()
+end, { desc = "Show [e]rrors" })
 -- }}}

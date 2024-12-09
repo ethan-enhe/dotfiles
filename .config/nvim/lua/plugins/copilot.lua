@@ -92,43 +92,39 @@ return {
 			},
 			{ "<leader>a?", "<cmd>CopilotChatModels<cr>", desc = "CopilotChat - Select Models" },
 		},
-		opts = function()
-			local user = vim.env.USER or "User"
-			user = user:sub(1, 1):upper() .. user:sub(2)
-			return {
-				-- model = "claude-3.5-sonnet",
-				window = {
-					width = 0.35,
+		opts = {
+			-- model = "claude-3.5-sonnet",
+			window = {
+				width = 0.35,
+			},
+			mappings = {
+				-- Use tab for completion
+				complete = {
+					detail = "Use @<c-n> or /<c-n> for options.",
+					insert = "<c-n>",
 				},
-				mappings = {
-					-- Use tab for completion
-					complete = {
-						detail = "Use @<c-n> or /<c-n> for options.",
-						insert = "<c-n>",
-					},
-					-- Close the chat
-					close = {
-						normal = "q",
-						insert = "<C-c>",
-					},
-					-- Reset the chat buffer
-					reset = {
-						normal = "<C-x>",
-						insert = "<C-x>",
-					},
-					-- Submit the prompt to Copilot
-					submit_prompt = {
-						normal = "<CR>",
-						insert = "<C-CR>",
-					},
-					-- Accept the diff
-					accept_diff = {
-						normal = "<C-y>",
-						insert = "<C-y>",
-					},
+				-- Close the chat
+				close = {
+					normal = "q",
+					insert = "<C-c>",
 				},
-			}
-		end,
+				-- Reset the chat buffer
+				reset = {
+					normal = "<C-x>",
+					insert = "<C-x>",
+				},
+				-- Submit the prompt to Copilot
+				submit_prompt = {
+					normal = "<CR>",
+					insert = "<C-CR>",
+				},
+				-- Accept the diff
+				accept_diff = {
+					normal = "<C-y>",
+					insert = "<C-y>",
+				},
+			},
+		},
 		config = function(_, opts)
 			local chat = require("CopilotChat")
 

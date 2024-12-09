@@ -1,7 +1,14 @@
 return {
 	"folke/todo-comments.nvim",
 	cmd = { "TodoTrouble", "TodoTelescope" },
-	opts = {},
+	opts = {
+		highlight = {
+			pattern = [[.*<(KEYWORDS)]], -- pattern or table of patterns, used for highlighting (vim regex)
+		},
+		search = {
+			pattern = [[\b(KEYWORDS)\b]], -- match without the extra colon. You'll likely get false positives
+		},
+	},
 	keys = {
 		{
 			"]t",
@@ -19,5 +26,7 @@ return {
 		},
 		{ "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
 		{ "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
+		{ "<leader>xt", "<cmd>TodoQuickFix<cr>", desc = "Todo QuickFix" },
+		{ "<leader>xT", "<cmd>TodoQuickFix keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme QuickFix" },
 	},
 }
