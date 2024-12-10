@@ -13,101 +13,79 @@ local utils = require("luasnip-latex-snippets.util.utils")
 local pipe, no_backslash = utils.pipe, utils.no_backslash
 
 local get_visual = function(args, parent)
-    if (#parent.snippet.env.LS_SELECT_RAW > 0) then
-        return sn(nil, i(1, parent.snippet.env.LS_SELECT_RAW))
-    else
-        return sn(nil, i(1))
-    end
+	if #parent.snippet.env.LS_SELECT_RAW > 0 then
+		return sn(nil, i(1, parent.snippet.env.LS_SELECT_RAW))
+	else
+		return sn(nil, i(1))
+	end
 end
 
-local tex_utils = {}
-tex_utils.in_mathzone = function()
-    return vim.fn['vimtex#syntax#in_mathzone']() == 1
-end
-tex_utils.in_text = function()
-    return not tex_utils.in_mathzone()
-end
-tex_utils.in_comment = function()
-    return vim.fn['vimtex#syntax#in_comment']() == 1
-end
-tex_utils.in_env = function(name)
-    local is_inside = vim.fn['vimtex#env#is_inside'](name)
-    return (is_inside[1] > 0 and is_inside[2] > 0)
-end
-tex_utils.in_equation = function()
-    return tex_utils.in_env('equation')
-end
-tex_utils.in_itemize = function()
-    return tex_utils.in_env('itemize')
-end
-tex_utils.in_tikz = function()
-    return tex_utils.in_env('tikzpicture')
-end
-
-local math_nobackslash = pipe({ tex_utils.in_mathzone, no_backslash })
+local math_nobackslash = pipe({ utils.with_opts(utils.is_math, true), no_backslash })
 
 return {
-    s({ trig = "ti", priority = 99 },
-        fmta("\\textit{<>}", { d(1, get_visual) }),
-        { condition = no_backslash }
-    ),
-    s({ trig = "tt", priority = 99 },
-        fmta("\\texttt{<>}", { d(1, get_visual) }),
-        { condition = no_backslash }
-    ),
-    s({ trig = "mr", snippetType = "autosnippet", priority = 99 },
-        fmta("\\mathrm{<>}", { d(1, get_visual) }),
-        { condition = math_nobackslash }
-    ),
-    s({ trig = "mb", snippetType = "autosnippet", priority = 99 },
-        fmta("\\mathbf{<>}", { d(1, get_visual) }),
-        { condition = math_nobackslash }
-    ),
-    s({ trig = "opn", snippetType = "autosnippet", priority = 99 },
-        fmta("\\operatorname{<>}", { d(1, get_visual) }),
-        { condition = math_nobackslash }
-    ),
-    s({ trig = "dx", snippetType = "autosnippet", priority = 99 },
-        fmta("\\mathrm{d}<>", { d(1, get_visual) }),
-        { condition = math_nobackslash }
-    ),
-    s({ trig = "+-", snippetType = "autosnippet", priority = 99 },
-        fmta("\\pm<>", { d(1, get_visual) }),
-        { condition = math_nobackslash }
-    ),
-    s({ trig = "land", snippetType = "autosnippet", priority = 99 },
-        fmta("\\land<>", { d(1, get_visual) }),
-        { condition = math_nobackslash }
-    ),
-    s({ trig = "lor", snippetType = "autosnippet", priority = 99 },
-        fmta("\\lor<>", { d(1, get_visual) }),
-        { condition = math_nobackslash }
-    ),
-    s({ trig = "xor", snippetType = "autosnippet", priority = 99 },
-        fmta("\\oplus<>", { d(1, get_visual) }),
-        { condition = math_nobackslash }
-    ),
-    s({ trig = "tb", priority = 99 },
-        fmta("\\textbf{<>}", { d(1, get_visual) })
-    ),
-    s({ trig = "sec", priority = 99 },
-        fmta("\\section*{<>}", { i(1) })
-    ),
-    s({ trig = "ssec", priority = 99 },
-        fmta("\\subsection*{<>}", { i(1) })
-    ),
-    s({ trig = "ff", priority = 99 },
-        fmta([[
+	s({ trig = "ti", priority = 99 }, fmta("\\textit{<>}", { d(1, get_visual) }), { condition = no_backslash }),
+	s({ trig = "tt", priority = 99 }, fmta("\\texttt{<>}", { d(1, get_visual) }), { condition = no_backslash }),
+	s(
+		{ trig = "mr", snippetType = "autosnippet", priority = 99 },
+		fmta("\\mathrm{<>}", { d(1, get_visual) }),
+		{ condition = math_nobackslash }
+	),
+	s(
+		{ trig = "mb", snippetType = "autosnippet", priority = 99 },
+		fmta("\\mathbf{<>}", { d(1, get_visual) }),
+		{ condition = math_nobackslash }
+	),
+	s(
+		{ trig = "opn", snippetType = "autosnippet", priority = 99 },
+		fmta("\\operatorname{<>}", { d(1, get_visual) }),
+		{ condition = math_nobackslash }
+	),
+	s(
+		{ trig = "dx", snippetType = "autosnippet", priority = 99 },
+		fmta("\\mathrm{d}<>", { d(1, get_visual) }),
+		{ condition = math_nobackslash }
+	),
+	s(
+		{ trig = "+-", snippetType = "autosnippet", priority = 99 },
+		fmta("\\pm<>", { d(1, get_visual) }),
+		{ condition = math_nobackslash }
+	),
+	s(
+		{ trig = "land", snippetType = "autosnippet", priority = 99 },
+		fmta("\\land<>", { d(1, get_visual) }),
+		{ condition = math_nobackslash }
+	),
+	s(
+		{ trig = "lor", snippetType = "autosnippet", priority = 99 },
+		fmta("\\lor<>", { d(1, get_visual) }),
+		{ condition = math_nobackslash }
+	),
+	s(
+		{ trig = "xor", snippetType = "autosnippet", priority = 99 },
+		fmta("\\oplus<>", { d(1, get_visual) }),
+		{ condition = math_nobackslash }
+	),
+	s({ trig = "tb", priority = 99 }, fmta("\\textbf{<>}", { d(1, get_visual) })),
+	s({ trig = "sec", priority = 99 }, fmta("\\section*{<>}", { i(1) })),
+	s({ trig = "ssec", priority = 99 }, fmta("\\subsection*{<>}", { i(1) })),
+	s(
+		{ trig = "ff", priority = 99 },
+		fmta(
+			[[
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{<>}
 \caption{<>}
 \label{<>}
 \end{figure}
-]], { i(1), i(2), i(3) })
-    ),
-    s({ trig = "tpl", snippetType = "autosnippet", priority = 99 },
-        fmta([[
+]],
+			{ i(1), i(2), i(3) }
+		)
+	),
+	s(
+		{ trig = "tpl", snippetType = "autosnippet", priority = 99 },
+		fmta(
+			[[
 \documentclass[UTF8, 12pt]{ctexart}
 
 \usepackage{amsmath, amssymb, amsthm}
@@ -177,6 +155,8 @@ return {
 \maketitle
 <>
 \end{document}
-]], { i(1), i(0) })
-    )
+]],
+			{ i(1), i(0) }
+		)
+	),
 }
