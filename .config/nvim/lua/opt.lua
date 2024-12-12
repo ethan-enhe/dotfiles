@@ -27,6 +27,8 @@ vim.opt.breakindent = true
 -- Save undo history
 vim.opt.undofile = true
 
+vim.opt.jumpoptions = "stack"
+
 -- vim.opt.pumblend = 10 -- Popup blend
 vim.opt.pumheight = 10 -- Maximum number of entries in a popup
 

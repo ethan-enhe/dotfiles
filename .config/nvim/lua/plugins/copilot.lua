@@ -27,7 +27,7 @@ return {
 				suggestion = {
 					auto_trigger = true,
 					hide_during_completion = false,
-					debounce = 50,
+					-- debounce = 50,
 					keymap = {
 						accept = "<M-Up>",
 						accept_word = "<M-Right>",

@@ -44,7 +44,7 @@ map("n", "<leader>yf", function()
 end, { silent = true, desc = "Yank current file name (with full path)" })
 
 map("n", "<leader>dm", function()
-	vim.cmd("%s/\\v(\\[{}])/\\\\\\1/gc")
+	vim.cmd("%s/\\v(\\\\[{}])/\\\\\\1/gc")
 	vim.cmd("%s/|/\\vert/gc")
 end, { silent = true, desc = "Escape special characters for [m]arkdown" })
 

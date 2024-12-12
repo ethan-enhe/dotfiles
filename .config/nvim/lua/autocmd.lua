@@ -1,17 +1,5 @@
 local utils = require("utils")
 
--- vim.api.nvim_create_autocmd("BufWinEnter", {
---     group = utils.augroup("IrreplaceableWindows"),
---     pattern = "*",
---     callback = function()
---         local filetypes = { 'neo_tree', 'NvimTree', 'qf', 'Trouble', 'trouble', 'Outline' }
---         local buftypes = { 'terminal', 'nofile' }
---         if vim.tbl_contains(filetypes, vim.bo.filetype) or vim.tbl_contains(buftypes, vim.bo.buftype) then
---             vim.cmd("set winfixbuf")
---         end
---     end,
--- })
-
 -- Check if we need to reload the file when it changed
 vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
 	group = utils.augroup("checktime"),
