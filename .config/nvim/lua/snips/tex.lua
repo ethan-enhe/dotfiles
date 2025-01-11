@@ -20,7 +20,7 @@ local get_visual = function(args, parent)
 	end
 end
 
-local math_nobackslash = pipe({ utils.with_opts(utils.is_math, true), no_backslash })
+local math_nobackslash = pipe({ utils.with_opts(utils.is_math, false), no_backslash })
 
 return {
 	s({ trig = "ti", priority = 99 }, fmta("\\textit{<>}", { d(1, get_visual) }), { condition = no_backslash }),

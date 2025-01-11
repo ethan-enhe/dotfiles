@@ -42,6 +42,8 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 ulimit -s unlimited
 alias ls='lsd --hyperlink=auto'
 alias icat="kitten icat"
+alias s="kitten ssh"
+alias d="kitten diff"
 alias config='/usr/bin/git --git-dir=$HOME/Documents/dotfiles --work-tree=$HOME'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
@@ -57,6 +59,13 @@ export GEM_HOME=$HOME/gems
 export PATH=$HOME/gems/bin:$PATH
 export GTK_USE_PORTAL=1
 export PATH=$PATH:/opt/cross-tools.gcc_glibc/bin:/opt/gdb/bin:/opt/qemu/bin
+
+
+export COPT_HOME=/opt/copt72
+export COPT_LICENSE_DIR=$HOME/
+# export COPT_LICENSE_DIR=/opt/copt72
+export PATH=$COPT_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$COPT_HOME/lib:$LD_LIBRARY_PATH
 
 
 

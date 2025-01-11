@@ -1,5 +1,8 @@
 set selection-clipboard clipboard
 set synctex true
 set synctex-editor-command "nvim --headless -c \"VimtexInverseSearch %{line} '%{input}'\""
+set adjust-open "width"
+set incremental-search false 
 # map D set "first-page-column 1:1"
 # map <C-d> set "first-page-column 1:2"
+include catppuccin-latte

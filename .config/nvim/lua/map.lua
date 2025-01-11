@@ -8,6 +8,9 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- General Keymaps {{{
+map("i", "<C-l>", "<c-g>u<Esc>[s1z=`]a<c-g>u", { noremap = true, silent = true })
+--
+--
 -- Disable space key
 map({ "n", "v" }, "<Space>", "<nop>", { silent = true })
 

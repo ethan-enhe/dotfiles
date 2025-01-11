@@ -1,6 +1,6 @@
 return {
 	"folke/todo-comments.nvim",
-	cmd = { "TodoTrouble", "TodoTelescope" },
+	-- cmd = { "TodoTrouble", "TodoTelescope" },
 	opts = {
 		highlight = {
 			pattern = [[.*<(KEYWORDS)]], -- pattern or table of patterns, used for highlighting (vim regex)

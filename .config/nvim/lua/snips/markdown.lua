@@ -36,6 +36,11 @@ return {
 		{ condition = math_nobackslash }
 	),
 	s(
+		{ trig = "ali", snippetType = "autosnippet", priority = 99 },
+		fmta("\\begin{aligned}\n<>\\end{aligned}", { d(1, get_visual) }),
+		{ condition = math_nobackslash }
+	),
+	s(
 		{ trig = "opn", snippetType = "autosnippet", priority = 99 },
 		fmta("\\operatorname{<>}", { d(1, get_visual) }),
 		{ condition = math_nobackslash }
