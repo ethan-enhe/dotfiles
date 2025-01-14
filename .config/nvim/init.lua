@@ -2,8 +2,7 @@
 local function safe_require(module)
 	local ok, err = pcall(require, module)
 	if not ok then
-		print("Error in " .. module .. ": " .. err)
-	end
+		print("Error in " .. module .. ": " .. err)	end
 end
 
 -- Load core configurations

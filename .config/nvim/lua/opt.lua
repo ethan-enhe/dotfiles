@@ -16,6 +16,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
+vim.opt.cursorline = true -- Highlight current line
 
 -- Enable mouse mode
 vim.opt.mouse = "a"

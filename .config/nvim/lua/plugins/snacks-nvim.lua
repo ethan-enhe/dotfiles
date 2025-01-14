@@ -9,6 +9,7 @@ return {
 			notifier = { enabled = true },
 			quickfile = { enabled = true },
 			bufdelete = { enabled = true },
+			lastplace = { enabled = false },
 			-- dashboard = {
 			-- 	enabled = true,
 			-- 	-- example = "startify",
